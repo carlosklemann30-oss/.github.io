@@ -1,28 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pirâmide Casas Pré-Fabricadas</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+/* --- CONFIGURAÇÕES GLOBAIS --- */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
 
-    <header class="top-header">
-        <div class="logo">Pirâmide Casas Pré-Fabricadas</div>
-    </header>
+/* --- CABEÇALHO COM O LOGO --- */
+.top-header {
+    position: absolute; /* Fica por cima da imagem de fundo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 10; /* Garante que fique na frente */
+}
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Pronto para começar um novo capítulo?</h1>
-                <a href="https://wa.me/554734294697" class="cta-button" target="_blank">Orçamento</a>
-            </div>
-        </section>
-    </main>
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para legibilidade */
+}
 
-</body>
-</html>
+/* --- SEÇÃO PRINCIPAL (HERO) --- */
+.hero {
+    /* IMAGEM DE FUNDO COM FILTRO ESCURO */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Filtro escuro */
+        url('/images/hero-bg.jpg'); /* ATENÇÃO: Sua imagem deve ter este nome! */
+    
+    background-size: cover;
+    background-position: center;
+    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4rem; /* Título bem grande e impactante */
+    font-weight: 900;
+    margin-bottom: 2.5rem; /* Mais espaço até o botão */
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra forte no texto */
+}
+
+/* --- BOTÃO DE ORÇAMENTO (WHATSAPP) --- */
+.cta-button {
+    background-color: #25D366; /* Cor oficial do WhatsApp */
+    color: #ffffff; /* Texto branco */
+    padding: 18px 50px; /* Botão mais largo */
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6); /* Brilho verde */
+}
+
+.cta-button:hover {
+    transform: scale(1.1); /* Aumenta mais ao passar o mouse */
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
+}
