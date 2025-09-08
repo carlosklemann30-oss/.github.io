@@ -27,12 +27,7 @@ body {
     letter-spacing: 2px;
 }
 
-.logo-sub {
-    display: block;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
+
 
 
 .logo-sub {
@@ -100,6 +95,7 @@ body {
     transform: scale(1.1); /* Aumenta mais ao passar o mouse */
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
 }
+
 
 
 
