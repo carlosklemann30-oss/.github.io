@@ -147,3 +147,52 @@ body {
     transform: scale(1.1); /* Aumenta um pouco ao passar o mouse */
 }
 
+/* --- SEÇÃO MODELOS POPULARES --- */
+.modelos {
+    background-color: #ffffff; /* 1. Fundo branco */
+    color: #333333; /* Texto escuro para contraste */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.modelos h2 {
+    font-size: 2.5rem;
+    font-weight: 900; /* 2. Título em negrito */
+    margin-bottom: 4rem;
+    text-transform: uppercase; /* 2. Título em maiúsculas */
+}
+
+.modelos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.modelo-item {
+    flex: 1;
+    border: 1px solid #e0e0e0; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que a imagem não saia da borda */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra suave */
+}
+
+.modelo-item img {
+    width: 100%;
+    height: 250px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.modelo-item h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.modelo-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 1.5rem 1.5rem 1.5rem; /* Espaçamento interno para o texto */
+}
+
