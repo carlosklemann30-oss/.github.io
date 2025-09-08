@@ -16,7 +16,9 @@ body {
 }
 
 .logo {
-    color: #000000; /* Cor do texto preta para o fundo branco */
+    color: #000000; /* <-- ADICIONE ESTA LINHA */
+    line-height: 1.2; 
+}
     line-height: 1.2; /* Ajusta o espaçamento entre as linhas */
 }
 
@@ -92,4 +94,5 @@ body {
     transform: scale(1.1); /* Aumenta mais ao passar o mouse */
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
 }
+
 
