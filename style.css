@@ -1,7 +1,7 @@
 /* --- CONFIGURAÇÕES GLOBAIS --- */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Open Sans', sans-serif;
     background-color: #121212;
     color: #ffffff;
 }
@@ -85,3 +85,4 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
 }
+
