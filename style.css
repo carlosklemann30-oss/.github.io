@@ -15,26 +15,24 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.logo {
+.top-header .logo { /* <-- AQUI ESTAVA O ERRO! Precisamos ser específicos. */
     color: #000000; /* Cor do texto preta */
+    text-shadow: none; /* Remove a sombra do texto herdada do body */
     line-height: 1.2;
 }
 
-.logo-main {
+.top-header .logo-main { /* Especificidade para a linha principal */
     display: block;
     font-size: 2rem;
     font-weight: 900;
     letter-spacing: 2px;
 }
 
-
-
-
-.logo-sub {
-    display: block; /* Ocupa a linha de baixo */
-    font-size: 1rem; /* Tamanho menor */
-    font-weight: 700; /* Negrito normal */
-    letter-spacing: 1.5px; /* Espaçamento um pouco menor */
+.top-header .logo-sub { /* Especificidade para a linha secundária */
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
 }
 
 
@@ -95,6 +93,7 @@ body {
     transform: scale(1.1); /* Aumenta mais ao passar o mouse */
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
 }
+
 
 
 
