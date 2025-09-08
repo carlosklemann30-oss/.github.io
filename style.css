@@ -6,7 +6,6 @@ body {
     color: #ffffff;
 }
 
-
 /* --- CABEÇALHO COM O LOGO --- */
 .top-header {
     background-color: #ffffff; /* Faixa branca */
@@ -15,40 +14,33 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.top-header .logo { /* <-- AQUI ESTAVA O ERRO! Precisamos ser específicos. */
+.logo {
     color: #000000; /* Cor do texto preta */
-    text-shadow: none; /* Remove a sombra do texto herdada do body */
+    text-shadow: none; /* Remove qualquer sombra de texto herdada */
     line-height: 1.2;
 }
 
-.top-header .logo-main { /* Especificidade para a linha principal */
+.logo-main {
     display: block;
     font-size: 2rem;
     font-weight: 900;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.top-header .logo-sub { /* Especificidade para a linha secundária */
+.logo-sub {
     display: block;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-}
-
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para legibilidade */
+    text-transform: uppercase;
 }
 
 /* --- SEÇÃO PRINCIPAL (HERO) --- */
 .hero {
-    /* IMAGEM DE FUNDO COM FILTRO ESCURO */
     background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Filtro escuro */
-        url('/images/hero-bg.jpg'); /* ATENÇÃO: Sua imagem deve ter este nome! */
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('/images/hero-bg.jpg');
     
     background-size: cover;
     background-position: center;
@@ -67,18 +59,18 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4rem; /* Título bem grande e impactante */
+    font-size: 4rem;
     font-weight: 900;
-    margin-bottom: 2.5rem; /* Mais espaço até o botão */
+    margin-bottom: 2.5rem;
     line-height: 1.2;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra forte no texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* --- BOTÃO DE ORÇAMENTO (WHATSAPP) --- */
 .cta-button {
-    background-color: #25D366; /* Cor oficial do WhatsApp */
-    color: #ffffff; /* Texto branco */
-    padding: 18px 50px; /* Botão mais largo */
+    background-color: #25D366;
+    color: #ffffff;
+    padding: 18px 50px;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
@@ -86,18 +78,10 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease;
     display: inline-block;
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6); /* Brilho verde */
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
 }
 
 .cta-button:hover {
-    transform: scale(1.1); /* Aumenta mais ao passar o mouse */
+    transform: scale(1.1);
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
 }
-
-
-
-
-
-
-
-
