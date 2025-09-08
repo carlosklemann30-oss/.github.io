@@ -68,6 +68,7 @@ header nav a:hover {
     align-items: center;
     justify-content: center;
     margin-top: 80px; /* Espaço para o cabeçalho fixo */
+    min-height: 100vh;
 }
 
 .hero-content h1 {
@@ -157,3 +158,4 @@ footer {
     text-align: center;
     padding: 1.5rem 0;
 }
+
