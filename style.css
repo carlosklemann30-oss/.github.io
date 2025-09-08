@@ -86,3 +86,64 @@ body {
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
 }
 
+/* --- SEÇÃO QUEM SOMOS --- */
+.about-us {
+    background-color: #2b2b2b; /* Fundo cinza-escuro */
+    padding: 80px 0; /* Espaçamento interno (80px em cima/baixo, 0 nos lados) */
+}
+
+.about-us .container {
+    max-width: 1100px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Espaçamento lateral para telas menores */
+    display: flex; /* Ativa o layout flexbox */
+    align-items: center; /* Alinha os itens verticalmente */
+    gap: 50px; /* Espaço entre a coluna de texto e a de imagens */
+}
+
+.about-content {
+    flex: 1; /* Faz a coluna de texto ocupar o espaço disponível */
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-images {
+    flex-basis: 450px; /* Define uma largura base para a coluna de imagens */
+    display: flex;
+    flex-direction: column; /* Empilha as imagens verticalmente */
+    gap: 20px; /* Espaço entre as duas imagens */
+}
+
+.about-images img {
+    width: 100%; /* Faz a imagem ocupar toda a largura da coluna */
+    border-radius: 8px; /* Bordas levemente arredondadas */
+}
+
+/* --- BOTÃO FLUTUANTE DO WHATSAPP --- */
+.whatsapp-float {
+    position: fixed; /* Posição fixa na tela */
+    bottom: 30px; /* 30px de distância do fundo */
+    right: 30px; /* 30px de distância da direita */
+    z-index: 100; /* Garante que fique acima de tudo */
+}
+
+.whatsapp-float img {
+    width: 60px; /* Tamanho do ícone */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.1); /* Aumenta um pouco ao passar o mouse */
+}
+
