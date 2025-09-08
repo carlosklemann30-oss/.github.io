@@ -8,14 +8,32 @@ body {
 
 /* --- CABEÇALHO COM O LOGO --- */
 .top-header {
-    position: absolute; /* Fica por cima da imagem de fundo */
-    top: 0;
-    left: 0;
-    width: 100%;
+    /* Tira o posicionamento absoluto para criar a faixa */
+    background-color: #ffffff; /* Faixa branca */
     padding: 20px 0;
     text-align: center;
-    z-index: 10; /* Garante que fique na frente */
+    border-bottom: 1px solid #eee; /* Linha sutil de separação */
 }
+
+.logo {
+    color: #000000; /* Cor do texto preta para o fundo branco */
+    line-height: 1.2; /* Ajusta o espaçamento entre as linhas */
+}
+
+.logo-main {
+    display: block; /* Faz com que ocupe uma linha inteira */
+    font-size: 2rem; /* Tamanho maior */
+    font-weight: 900; /* Bem negrito */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+}
+
+.logo-sub {
+    display: block; /* Ocupa a linha de baixo */
+    font-size: 1rem; /* Tamanho menor */
+    font-weight: 700; /* Negrito normal */
+    letter-spacing: 1.5px; /* Espaçamento um pouco menor */
+}
+
 
 .logo {
     font-size: 1.5rem;
@@ -74,3 +92,4 @@ body {
     transform: scale(1.1); /* Aumenta mais ao passar o mouse */
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
 }
+
