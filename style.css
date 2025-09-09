@@ -192,7 +192,10 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Faz esta área crescer para preencher o espaço */
+    flex-grow: 1;
+    text-align: center; /* <-- ADICIONE ESTA LINHA */
+}
+
 }
 .modelo-item h3 {
     font-size: 1.3rem;
@@ -206,6 +209,7 @@ body {
     color: #666;
     flex-grow: 1; /* Garante que o parágrafo cresça, alinhando os cards */
 }
+
 
 
 
