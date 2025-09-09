@@ -193,11 +193,11 @@ body {
 }
 
 .modelo-info {
-    padding: 25px; /* Aumentei um pouco o espaçamento interno */
-    text-align: center; /* FORÇA TODO O TEXTO AQUI DENTRO A SER CENTRALIZADO */
+    padding: 25px;
+    text-align: center !important; /* <-- ADICIONE O !important AQUI */
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Garante que os cards tenham a mesma altura */
+    flex-grow: 1;
 }
 
 .modelo-info h3 {
@@ -214,6 +214,7 @@ body {
     flex-grow: 1; /* Garante que o parágrafo cresça, alinhando os cards */
     margin-bottom: 0; /* Remove margem extra do parágrafo */
 }
+
 
 
 
