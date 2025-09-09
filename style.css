@@ -196,7 +196,6 @@ body {
     text-align: center; /* <-- ADICIONE ESTA LINHA */
 }
 
-}
 .modelo-item h3 {
     font-size: 1.3rem;
     margin-top: 0;
@@ -209,6 +208,7 @@ body {
     color: #666;
     flex-grow: 1; /* Garante que o parágrafo cresça, alinhando os cards */
 }
+
 
 
 
