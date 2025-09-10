@@ -211,3 +211,40 @@ body {
 .whatsapp-float img:hover {
     transform: scale(1.1);
 }
+
+
+/* --- SEÇÃO ONDE ESTAMOS --- */
+.location {
+    display: flex;
+    background-color: #2b2b2b;
+}
+
+.location-image {
+    flex-basis: 50%;
+    background-image: url('/images/local-joinville.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.location-content {
+    flex-basis: 50%;
+    color: #ffffff;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.location-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
