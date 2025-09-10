@@ -223,7 +223,8 @@ body {
     flex-basis: 50%;
     background-image: url('/images/local-joinville.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top; /* ALTERE DE 'center' PARA 'top' */
+
 }
 
 .location-content {
@@ -247,4 +248,5 @@ body {
     line-height: 1.8;
     margin-bottom: 1.5rem;
 }
+
 
