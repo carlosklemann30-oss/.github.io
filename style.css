@@ -346,11 +346,11 @@ body {
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px; /* Aumenta o espaço entre logo e texto */
 }
 
 .footer-logo img {
-    height: 80px;
+    height: 90px; /* Aumenta um pouco o logo */
 }
 
 .footer-logo-text {
@@ -360,16 +360,16 @@ body {
 
 .footer-logo-text span:first-child {
     display: block;
-    font-size: 1.8rem;
+    font-size: 2.8rem; /* Aumenta a fonte principal */
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 3px; /* Aumenta o espaçamento entre letras */
 }
 
 .footer-logo-text span:last-child {
     display: block;
-    font-size: 1rem;
+    font-size: 1.5rem; /* Aumenta a fonte secundária */
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
 .footer-gallery {
@@ -385,8 +385,18 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #444;
     padding: 40px 0;
+}
+
+.footer-contato h3 {
+    font-size: 1.5rem; /* Aumenta o título */
+    text-transform: uppercase;
+    margin-bottom: 30px; /* Mais espaço abaixo do título */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center; /* Centraliza o título */
+    border-top: 1px solid #444; /* Adiciona a linha acima */
+    padding-top: 40px; /* Espaço acima do título */
 }
 
 .contato-grid {
@@ -395,22 +405,14 @@ body {
     align-items: flex-start;
 }
 
-.footer-contato h3 {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
 .contato-coluna {
     flex: 1;
     padding: 0 15px;
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas */
 }
 
 .contato-coluna p {
     margin-bottom: 10px;
-    line-height: 1.6;
     color: #ccc;
 }
 
@@ -425,15 +427,26 @@ body {
     vertical-align: middle;
 }
 
-.social-icons img {
-    width: 28px;
-    height: 28px;
+.social-icons a {
+    background-color: #ffffff; /* Fundo branco para o círculo */
+    border-radius: 50%; /* Deixa o fundo redondo */
+    width: 32px; /* Tamanho do círculo */
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: opacity 0.3s ease;
 }
 
-.social-icons img:hover {
+.social-icons a:hover {
     opacity: 0.8;
 }
+
+.social-icons img {
+    width: 18px; /* Tamanho do ícone dentro do círculo */
+    height: 18px;
+}
+
 
 /* --- BOTÃO FLUTUANTE WHATSAPP --- */
 .whatsapp-float {
@@ -492,3 +505,4 @@ body {
         font-size: 2.5rem;
     }
 }
+
