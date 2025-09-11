@@ -231,17 +231,17 @@ body {
 
 /* --- SEÇÃO MADEIRAS DE QUALIDADE --- */
 .madeiras-qualidade {
-    padding: 80px 0; /* Espaçamento vertical */
-    background-color: #f4f4f4; /* Fundo cinza claro */
+    padding: 80px 0;
+    background-color: #f4f4f4;
 }
 
 .madeiras-qualidade-content {
     display: flex;
     align-items: center;
     gap: 50px;
-    max-width: 1400px; /* Aumenta a largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza o conteúdo */
-    padding: 0 40px; /* Espaçamento lateral interno */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .madeiras-qualidade .video-box {
@@ -275,6 +275,65 @@ body {
     color: #555;
 }
 
+/* --- SEÇÃO DEPOIMENTOS --- */
+.depoimentos {
+    padding: 80px 0;
+    background-color: #ffffff; /* Fundo branco para destacar */
+}
+
+.titulo-secao {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 1.5px;
+}
+
+.depoimentos-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.depoimento-card {
+    flex: 1;
+    text-align: center;
+}
+
+.depoimento-card::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #c4c4c4;
+    margin: 0 auto 25px auto;
+}
+
+.depoimento-texto {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.depoimento-autor {
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.depoimento-autor:hover {
+    color: #1a3d7c;
+}
+
 /* --- BOTÃO FLUTUANTE WHATSAPP --- */
 .whatsapp-float {
     position: fixed;
@@ -292,31 +351,19 @@ body {
     transform: scale(1.1);
 }
 
-@media (max-width: 900px) {
-    .about-us .container,
-    .location,
-    .madeiras-qualidade-content,
-    .depoimentos-grid { /* ADICIONE AQUI */
-        flex-direction: column;
-        gap: 50px; /* Adiciona um espaço maior no modo coluna */
-    }
-
-
 /* --- REGRAS DE RESPONSIVIDADE --- */
 @media (max-width: 900px) {
     .about-us .container,
     .location,
-    .madeiras-qualidade-content {
+    .madeiras-qualidade-content,
+    .modelos-grid,
+    .depoimentos-grid {
         flex-direction: column;
+        gap: 50px;
     }
 
     .location-content {
         padding: 60px 20px;
-    }
-
-    .modelos-grid {
-        flex-direction: column;
-        gap: 40px;
     }
 }
 
@@ -325,4 +372,3 @@ body {
         font-size: 2.5rem;
     }
 }
-
