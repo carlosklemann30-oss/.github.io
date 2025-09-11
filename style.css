@@ -48,7 +48,7 @@ body {
 
 /* --- SEÇÃO HERO --- */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6 ), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -328,7 +328,7 @@ body {
     color: #1a3d7c;
 }
 
-/* --- RODAPÉ --- */
+/* --- RODAPÉ (CÓDIGO NOVO E CORRIGIDO) --- */
 .site-footer {
     background-color: #2b2b2b;
     color: #ffffff;
@@ -346,30 +346,30 @@ body {
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 25px; /* Aumenta o espaço entre logo e texto */
+    gap: 25px;
 }
 
 .footer-logo img {
-    height: 90px; /* Aumenta um pouco o logo */
+    height: 100px;
+    width: 100px;
+    border-radius: 50%; /* Deixa a imagem do logo redonda */
 }
 
-.footer-logo-text {
-    text-align: left;
+.footer-logo-text .titulo-principal {
+    font-family: 'Quattrocento', serif; /* Aplica a nova fonte */
+    font-size: 2.8rem;
+    font-weight: 700; /* Negrito */
+    letter-spacing: 3px;
     text-transform: uppercase;
+    display: block;
 }
 
-.footer-logo-text span:first-child {
-    display: block;
-    font-size: 2.8rem; /* Aumenta a fonte principal */
-    font-weight: 800;
-    letter-spacing: 3px; /* Aumenta o espaçamento entre letras */
-}
-
-.footer-logo-text span:last-child {
-    display: block;
-    font-size: 1.5rem; /* Aumenta a fonte secundária */
+.footer-logo-text .subtitulo {
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
 }
 
 .footer-gallery {
@@ -385,68 +385,44 @@ body {
 }
 
 .footer-bottom {
+    border-top: 1px solid #444;
     padding: 40px 0;
 }
 
-.footer-contato h3 {
-    font-size: 1.5rem; /* Aumenta o título */
-    text-transform: uppercase;
-    margin-bottom: 30px; /* Mais espaço abaixo do título */
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-align: center; /* Centraliza o título */
-    border-top: 1px solid #444; /* Adiciona a linha acima */
-    padding-top: 40px; /* Espaço acima do título */
-}
-
-.contato-grid {
+.contato-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.contato-coluna {
-    flex: 1;
-    padding: 0 15px;
-    line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+.contato-coluna-titulo {
+    flex-basis: 25%; /* Ocupa 1/4 do espaço */
 }
 
-.contato-coluna p {
-    margin-bottom: 10px;
+.contato-coluna-titulo h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.contato-coluna-info {
+    flex-basis: 25%; /* Ocupa 1/4 do espaço */
+    line-height: 1.8;
+}
+
+.contato-coluna-info a {
     color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.contato-coluna.social p {
-    display: inline-block;
-    margin-right: 10px;
+.contato-coluna-info a:hover {
+    color: #ffffff;
 }
-
-.social-icons {
-    display: inline-flex;
-    gap: 15px;
-    vertical-align: middle;
-}
-
-.social-icons a {
-    background-color: #ffffff; /* Fundo branco para o círculo */
-    border-radius: 50%; /* Deixa o fundo redondo */
-    width: 32px; /* Tamanho do círculo */
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.3s ease;
-}
-
-.social-icons a:hover {
-    opacity: 0.8;
-}
-
-.social-icons img {
-    width: 18px; /* Tamanho do ícone dentro do círculo */
-    height: 18px;
-}
-
 
 /* --- BOTÃO FLUTUANTE WHATSAPP --- */
 .whatsapp-float {
@@ -472,9 +448,10 @@ body {
     .madeiras-qualidade-content,
     .modelos-grid,
     .depoimentos-grid,
-    .contato-grid {
+    .contato-container { /* Adicionado para o rodapé */
         flex-direction: column;
         gap: 50px;
+        text-align: center; /* Centraliza o texto no mobile */
     }
 
     .location-content {
@@ -489,20 +466,16 @@ body {
         width: 100%;
         height: auto;
     }
-
-    .contato-coluna {
-        padding: 0;
-        text-align: center;
-    }
-
-    .contato-coluna.social {
-        margin-top: 20px;
-    }
 }
 
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
     }
+    .footer-logo-text .titulo-principal {
+        font-size: 2rem;
+    }
+    .footer-logo-text .subtitulo {
+        font-size: 1.2rem;
+    }
 }
-
