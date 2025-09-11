@@ -231,38 +231,31 @@ body {
 
 /* --- SEÇÃO MADEIRAS DE QUALIDADE --- */
 .madeiras-qualidade {
-    padding: 80px 20px;
-    background-image: url('images/marmore.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.madeiras-qualidade .container {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 40px;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 80px 5%; /* Espaçamento vertical e 5% nas laterais */
+    background-color: #f4f4f4; /* Fundo cinza claro */
 }
 
 .madeiras-qualidade .video-box {
-    flex: 1 1 55%;
+    flex: 1 1 55%; /* Ocupa 55% do espaço */
+    max-width: 700px; /* Limita a largura máxima do vídeo */
 }
 
 .madeiras-qualidade .video-box iframe {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    border: none;
+    aspect-ratio: 16 / 9; /* Proporção correta do vídeo */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     display: block;
+    border: none;
 }
 
 .madeiras-qualidade .texto-box {
-    flex: 1 1 45%;
+    flex: 1 1 45%; /* Ocupa 45% do espaço */
+    max-width: 500px; /* Limita a largura máxima do texto */
 }
 
 .madeiras-qualidade .texto-box h2 {
@@ -299,8 +292,9 @@ body {
 /* --- REGRAS DE RESPONSIVIDADE --- */
 @media (max-width: 900px) {
     .about-us .container,
-    .location {
-        flex-direction: column;
+    .location,
+    .madeiras-qualidade {
+        flex-direction: column; /* Coloca os itens um embaixo do outro */
     }
 
     .location-content {
@@ -310,11 +304,6 @@ body {
     .modelos-grid {
         flex-direction: column;
         gap: 40px;
-    }
-    
-    .madeiras-qualidade .container {
-        flex-direction: column;
-        padding: 30px;
     }
 }
 
