@@ -17,10 +17,10 @@ body {
     padding: 0 20px;
 }
 
-/* --- CABEÇALHO --- */
+/* --- CABEÇALHO (NOVO ESTILO) --- */
 .top-header {
     background-color: #ffffff;
-    padding: 20px 0;
+    padding: 30px 0; /* Aumenta o espaçamento vertical */
     text-align: center;
     border-bottom: 1px solid #eeeeee;
 }
@@ -32,26 +32,27 @@ body {
 
 .logo-main {
     display: block;
-    font-family: 'Quattrocento', serif; /* Aplica a fonte correta */
-    font-size: 50px; /* Tamanho da fonte em pixels */
+    font-family: 'Quattrocento', serif; /* Fonte correta */
+    font-size: 50px; /* Tamanho 50px */
     font-weight: 700; /* Negrito */
-    letter-spacing: 3px; /* Um pouco mais de espaço entre as letras */
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
 .logo-sub {
     display: block;
-    font-family: 'Quattrocento', serif; /* Aplica a fonte correta */
-    font-size: 30px; /* Tamanho da fonte em pixels */
+    font-family: 'Quattrocento', serif; /* Fonte correta */
+    font-size: 30px; /* Tamanho 30px */
     font-weight: 700; /* Negrito */
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-top: 5px; /* Adiciona um pequeno espaço acima */
+    margin-top: 5px;
 }
 
-/* --- SEÇÃO HERO --- */
+/* --- SEÇÃO HERO (NOVO ESTILO) --- */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6 ), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg');
+    /* Imagem de fundo mais clara e com tema de arquitetura/natureza */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('https://images.pexels.com/photos/1262626/pexels-photo-1262626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' );
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -60,15 +61,30 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
-    color: #ffffff;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Espaço entre o texto e o botão */
+}
+
+.hero-text-box {
+    background-color: rgba(240, 240, 240, 0.85); /* Fundo cinza claro, semi-transparente */
+    padding: 30px 50px;
+    border-radius: 5px; /* Bordas levemente arredondadas */
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 2.5rem;
-    line-height: 1.2;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-family: 'Quattrocento', serif; /* Fonte correta */
+    font-size: 3.5rem; /* Tamanho ajustado para o novo design */
+    font-weight: 700; /* Negrito */
+    color: #2b2b2b; /* Cor do texto escura para contrastar com o fundo claro */
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-shadow: none; /* Remove a sombra de texto anterior */
+    margin-bottom: 0; /* Remove a margem que não é mais necessária */
 }
 
 .cta-button {
@@ -82,13 +98,14 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease;
     display: inline-block;
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais sutil */
 }
 
 .cta-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
+    transform: translateY(-3px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
+
 
 /* --- SEÇÃO QUEM SOMOS --- */
 .about-us {
@@ -331,7 +348,7 @@ body {
     color: #1a3d7c;
 }
 
-/* --- RODAPÉ (CÓDIGO NOVO E CORRIGIDO) --- */
+/* --- RODAPÉ --- */
 .site-footer {
     background-color: #2b2b2b;
     color: #ffffff;
@@ -355,13 +372,13 @@ body {
 .footer-logo img {
     height: 100px;
     width: 100px;
-    border-radius: 50%; /* Deixa a imagem do logo redonda */
+    border-radius: 50%;
 }
 
 .footer-logo-text .titulo-principal {
-    font-family: 'Quattrocento', serif; /* Aplica a nova fonte */
+    font-family: 'Quattrocento', serif;
     font-size: 2.8rem;
-    font-weight: 700; /* Negrito */
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     display: block;
@@ -402,7 +419,7 @@ body {
 }
 
 .contato-coluna-titulo {
-    flex-basis: 25%; /* Ocupa 1/4 do espaço */
+    flex-basis: 25%;
 }
 
 .contato-coluna-titulo h3 {
@@ -413,7 +430,7 @@ body {
 }
 
 .contato-coluna-info {
-    flex-basis: 25%; /* Ocupa 1/4 do espaço */
+    flex-basis: 25%;
     line-height: 1.8;
 }
 
@@ -451,10 +468,10 @@ body {
     .madeiras-qualidade-content,
     .modelos-grid,
     .depoimentos-grid,
-    .contato-container { /* Adicionado para o rodapé */
+    .contato-container {
         flex-direction: column;
         gap: 50px;
-        text-align: center; /* Centraliza o texto no mobile */
+        text-align: center;
     }
 
     .location-content {
@@ -475,6 +492,12 @@ body {
     .hero-content h1 {
         font-size: 2.5rem;
     }
+    .logo-main {
+        font-size: 35px; /* Ajusta o tamanho para celular */
+    }
+    .logo-sub {
+        font-size: 20px; /* Ajusta o tamanho para celular */
+    }
     .footer-logo-text .titulo-principal {
         font-size: 2rem;
     }
@@ -482,4 +505,3 @@ body {
         font-size: 1.2rem;
     }
 }
-
