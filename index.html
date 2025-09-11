@@ -7,50 +7,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+    <!-- O ideal é que todo o CSS vá para o arquivo style.css, mas mantive aqui conforme sua estrutura. -->
+    <link rel="stylesheet" href="style.css"> 
     <style>
-        /* Seção Madeiras de Qualidade */
+        /* --- SEÇÃO MADEIRAS DE QUALIDADE (CÓDIGO NOVO E CORRIGIDO ) --- */
         .madeiras-qualidade {
+            padding: 80px 20px; /* Espaçamento vertical e um pequeno espaçamento lateral para segurança */
+            background-image: url('images/marmore.jpg'); /* Fundo marmorizado */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .madeiras-qualidade .container {
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 60px 5%;
-            background: #f9f9f9;
             gap: 40px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            max-width: 1200px; /* Limita a largura do cartão branco */
+            margin: 0 auto; /* Centraliza o cartão branco na tela */
         }
+
         .madeiras-qualidade .video-box {
-            flex: 1 1 55%;
+            flex: 1 1 55%; /* Ocupa 55% do espaço disponível */
         }
+
         .madeiras-qualidade .video-box iframe {
             width: 100%;
-            height: 450px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            aspect-ratio: 16 / 9; /* Mantém a proporção correta do vídeo */
+            border-radius: 8px;
+            border: none; /* Remove bordas do iframe */
+            display: block; /* Evita espaços indesejados abaixo do vídeo */
         }
+
         .madeiras-qualidade .texto-box {
-            flex: 1 1 40%;
-            background: rgba(255,255,255,0.9);
-            padding: 20px 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            flex: 1 1 45%; /* Ocupa 45% do espaço */
         }
+
         .madeiras-qualidade .texto-box h2 {
-            font-size: 28px;
-            color: #1a3d7c;
-            margin-bottom: 15px;
-        }
-        .madeiras-qualidade .texto-box p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
             color: #333;
         }
-        @media (max-width: 768px) {
-            .madeiras-qualidade {
-                flex-direction: column;
-                padding: 30px 5%;
-            }
-            .madeiras-qualidade .texto-box {
-                width: 100%;
+
+        .madeiras-qualidade .texto-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Ajuste para telas menores (celulares) */
+        @media (max-width: 900px) {
+            .madeiras-qualidade .container {
+                flex-direction: column; /* Vídeo fica em cima do texto */
+                padding: 30px;
             }
         }
     </style>
@@ -92,7 +106,7 @@
                 <h2>MODELOS POPULARES</h2>
                 <div class="modelos-grid">
                     <div class="modelo-item">
-                        <div class="modelo-imagem" style="background-image: url('/images/projeto3.jpg' );"></div>
+                        <div class="modelo-imagem" style="background-image: url('/images/projeto3.jpg'  );"></div>
                         <div class="modelo-info">
                             <h3>Projetos Em Madeira</h3>
                             <p>2 Quartos | 1 Banheiros | Sala e Cozinha conjugada. Imóvel acessível para investimento em locação</p>
@@ -128,19 +142,21 @@
             </div>
         </section>
 
-        <!-- INÍCIO DA SEÇÃO MADEIRAS DE QUALIDADE -->
+        <!-- INÍCIO DA SEÇÃO MADEIRAS DE QUALIDADE (ESTRUTURA NOVA) -->
         <section class="madeiras-qualidade">
-            <div class="video-box">
-                <iframe 
-                    src="https://player.vimeo.com/video/1117542662" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="texto-box">
-                <h2>MADEIRAS DE QUALIDADE</h2>
-                <p>Nossas obras são feitas em madeiras de lei, com esquadrias em vidros temperados, fundações em alvenarias para manter melhor qualidade de nossas obras.</p>
+            <div class="container">
+                <div class="video-box">
+                    <iframe 
+                        src="https://player.vimeo.com/video/913993302?h=1c839762c3" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="texto-box">
+                    <h2>MADEIRAS DE QUALIDADE</h2>
+                    <p>Nossas obras são feitas em madeiras de lei, com esquadrias em vidros temperados, fundações em alvenarias para manter melhor qualidade de nossas obras.</p>
+                </div>
             </div>
         </section>
         <!-- FIM DA SEÇÃO MADEIRAS DE QUALIDADE -->
