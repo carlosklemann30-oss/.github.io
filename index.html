@@ -7,67 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-    <!-- O ideal é que todo o CSS vá para o arquivo style.css, mas mantive aqui conforme sua estrutura. -->
     <link rel="stylesheet" href="style.css"> 
-    <style>
-        /* --- SEÇÃO MADEIRAS DE QUALIDADE (CÓDIGO NOVO E CORRIGIDO ) --- */
-        .madeiras-qualidade {
-            padding: 80px 20px; /* Espaçamento vertical e um pequeno espaçamento lateral para segurança */
-            background-image: url('images/marmore.jpg'); /* Fundo marmorizado */
-            background-size: cover;
-            background-position: center;
-        }
-
-        .madeiras-qualidade .container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            max-width: 1200px; /* Limita a largura do cartão branco */
-            margin: 0 auto; /* Centraliza o cartão branco na tela */
-        }
-
-        .madeiras-qualidade .video-box {
-            flex: 1 1 55%; /* Ocupa 55% do espaço disponível */
-        }
-
-        .madeiras-qualidade .video-box iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9; /* Mantém a proporção correta do vídeo */
-            border-radius: 8px;
-            border: none; /* Remove bordas do iframe */
-            display: block; /* Evita espaços indesejados abaixo do vídeo */
-        }
-
-        .madeiras-qualidade .texto-box {
-            flex: 1 1 45%; /* Ocupa 45% do espaço */
-        }
-
-        .madeiras-qualidade .texto-box h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            color: #333;
-        }
-
-        .madeiras-qualidade .texto-box p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        /* Ajuste para telas menores (celulares) */
-        @media (max-width: 900px) {
-            .madeiras-qualidade .container {
-                flex-direction: column; /* Vídeo fica em cima do texto */
-                padding: 30px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -95,8 +35,8 @@
                     <p>Convidamos você a conhecer a solidez e a sofisticação que definem um projeto Pirâmide Casas.</p>
                 </div>
                 <div class="about-images">
-                    <img src="/images/projeto1.jpg" alt="Casa pré-fabricada com varanda">
-                    <img src="/images/projeto2.jpg" alt="Casa pré-fabricada de dois andares">
+                    <img src="images/projeto1.jpg" alt="Casa pré-fabricada com varanda">
+                    <img src="images/projeto2.jpg" alt="Casa pré-fabricada de dois andares">
                 </div>
             </div>
         </section>
@@ -106,21 +46,21 @@
                 <h2>MODELOS POPULARES</h2>
                 <div class="modelos-grid">
                     <div class="modelo-item">
-                        <div class="modelo-imagem" style="background-image: url('/images/projeto3.jpg'  );"></div>
+                        <div class="modelo-imagem" style="background-image: url('images/projeto3.jpg'  );"></div>
                         <div class="modelo-info">
                             <h3>Projetos Em Madeira</h3>
                             <p>2 Quartos | 1 Banheiros | Sala e Cozinha conjugada. Imóvel acessível para investimento em locação</p>
                         </div>
                     </div>
                     <div class="modelo-item">
-                        <div class="modelo-imagem" style="background-image: url('/images/protejo4.jpg');"></div>
+                        <div class="modelo-imagem" style="background-image: url('images/protejo4.jpg');"></div>
                         <div class="modelo-info">
                             <h3>Projetos Em Alvenaria</h3>
                             <p>3 Quartos | 1 Banheiros |Sala e Cozinha conjugada. Projeto clean para moradia</p>
                         </div>
                     </div>
                     <div class="modelo-item">
-                        <div class="modelo-imagem" style="background-image: url('/images/projeto5.jpg');"></div>
+                        <div class="modelo-imagem" style="background-image: url('images/projeto5.jpg');"></div>
                         <div class="modelo-info">
                             <h3>Projetos Chalés</h3>
                             <p>Chalés em madeira ou Stell Frame para instalação no campo ou litoral</p>
@@ -130,7 +70,6 @@
             </div>
         </section>
 
-        <!-- INÍCIO DA SEÇÃO ONDE ESTAMOS -->
         <section class="location">
             <div class="location-image"></div>
             <div class="location-content">
@@ -142,7 +81,6 @@
             </div>
         </section>
 
-        <!-- INÍCIO DA SEÇÃO MADEIRAS DE QUALIDADE (ESTRUTURA NOVA) -->
         <section class="madeiras-qualidade">
             <div class="container">
                 <div class="video-box">
@@ -159,7 +97,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIM DA SEÇÃO MADEIRAS DE QUALIDADE -->
 
     </main>
 
