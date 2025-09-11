@@ -135,7 +135,7 @@ body {
     padding: 80px 0;
 }
 
-.modelos h2 {
+.modelos h2, .titulo-secao {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 800;
@@ -278,17 +278,11 @@ body {
 /* --- SEÇÃO DEPOIMENTOS --- */
 .depoimentos {
     padding: 80px 0;
-    background-color: #ffffff; /* Fundo branco para destacar */
+    background-color: #ffffff;
 }
 
 .titulo-secao {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
     margin-bottom: 60px;
-    text-transform: uppercase;
-    color: #333;
-    letter-spacing: 1.5px;
 }
 
 .depoimentos-grid {
@@ -334,6 +328,113 @@ body {
     color: #1a3d7c;
 }
 
+/* --- RODAPÉ --- */
+.site-footer {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding-top: 50px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo img {
+    height: 80px;
+}
+
+.footer-logo-text {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.footer-logo-text span:first-child {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.footer-logo-text span:last-child {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.footer-gallery {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.footer-gallery img {
+    width: 33.333%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding: 40px 0;
+}
+
+.contato-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-contato h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.contato-coluna {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.contato-coluna p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.contato-coluna.social p {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons {
+    display: inline-flex;
+    gap: 15px;
+    vertical-align: middle;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+    opacity: 0.8;
+}
+
 /* --- BOTÃO FLUTUANTE WHATSAPP --- */
 .whatsapp-float {
     position: fixed;
@@ -357,13 +458,32 @@ body {
     .location,
     .madeiras-qualidade-content,
     .modelos-grid,
-    .depoimentos-grid {
+    .depoimentos-grid,
+    .contato-grid {
         flex-direction: column;
         gap: 50px;
     }
 
     .location-content {
         padding: 60px 20px;
+    }
+
+    .footer-gallery {
+        flex-direction: column;
+    }
+
+    .footer-gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contato-coluna {
+        padding: 0;
+        text-align: center;
+    }
+
+    .contato-coluna.social {
+        margin-top: 20px;
     }
 }
 
