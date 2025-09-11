@@ -231,22 +231,26 @@ body {
 
 /* --- SEÇÃO MADEIRAS DE QUALIDADE --- */
 .madeiras-qualidade {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 80px 5%; /* Espaçamento vertical e 5% nas laterais */
+    padding: 80px 0; /* Espaçamento vertical */
     background-color: #f4f4f4; /* Fundo cinza claro */
 }
 
+.madeiras-qualidade-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1400px; /* Aumenta a largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 40px; /* Espaçamento lateral interno */
+}
+
 .madeiras-qualidade .video-box {
-    flex: 1 1 55%; /* Ocupa 55% do espaço */
-    max-width: 700px; /* Limita a largura máxima do vídeo */
+    flex: 1 1 55%;
 }
 
 .madeiras-qualidade .video-box iframe {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Proporção correta do vídeo */
+    aspect-ratio: 16 / 9;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     display: block;
@@ -254,8 +258,7 @@ body {
 }
 
 .madeiras-qualidade .texto-box {
-    flex: 1 1 45%; /* Ocupa 45% do espaço */
-    max-width: 500px; /* Limita a largura máxima do texto */
+    flex: 1 1 45%;
 }
 
 .madeiras-qualidade .texto-box h2 {
@@ -293,8 +296,8 @@ body {
 @media (max-width: 900px) {
     .about-us .container,
     .location,
-    .madeiras-qualidade {
-        flex-direction: column; /* Coloca os itens um embaixo do outro */
+    .madeiras-qualidade-content {
+        flex-direction: column;
     }
 
     .location-content {
