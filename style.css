@@ -27,13 +27,13 @@ body {
 
 .logo {
     color: #000000;
-    line-height: 1.2;
+    line-height: 1.1; /* Reduz a altura da linha para aproximar */
 }
 
 .logo-main {
     display: block;
     font-family: 'Quattrocento', serif;
-    font-size: 60px; /* Aumentado para 60px */
+    font-size: 72px; /* Aumentado para 72px */
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -42,17 +42,17 @@ body {
 .logo-sub {
     display: block;
     font-family: 'Quattrocento', serif;
-    font-size: 35px; /* Aumentado para 35px */
+    font-size: 40px; /* Aumentado para 40px */
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-top: 5px;
+    margin-top: -5px; /* Margem negativa para aproximar do título */
 }
 
 /* --- SEÇÃO HERO (ESTILO FINAL) --- */
 .hero {
-    /* Imagem de fundo sem filtro escuro */
-    background-image: url('https://images.pexels.com/photos/221540/pexels-photo-221540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' );
+    /* Usando a imagem de fundo do seu projeto */
+    background-image: url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -493,10 +493,10 @@ body {
         font-size: 2.5rem;
     }
     .logo-main {
-        font-size: 40px; /* Ajusta o tamanho para celular */
+        font-size: 45px; /* Ajusta o tamanho para celular */
     }
     .logo-sub {
-        font-size: 25px; /* Ajusta o tamanho para celular */
+        font-size: 28px; /* Ajusta o tamanho para celular */
     }
     .footer-logo-text .titulo-principal {
         font-size: 2rem;
