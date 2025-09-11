@@ -48,7 +48,7 @@ body {
 
 /* --- SEÇÃO HERO --- */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -202,7 +202,7 @@ body {
 
 .location-image {
     flex-basis: 50%;
-    background-image: url('../images/local-joinville.jpg');
+    background-image: url('images/local-joinville.jpg');
     background-size: cover;
     background-position: top;
 }
@@ -232,7 +232,7 @@ body {
 /* --- SEÇÃO MADEIRAS DE QUALIDADE --- */
 .madeiras-qualidade {
     padding: 80px 20px;
-    background-image: url('../images/marmore.jpg');
+    background-image: url('images/marmore.jpg');
     background-size: cover;
     background-position: center;
 }
