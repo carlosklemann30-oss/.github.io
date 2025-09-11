@@ -32,18 +32,21 @@ body {
 
 .logo-main {
     display: block;
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-family: 'Quattrocento', serif; /* Aplica a fonte correta */
+    font-size: 50px; /* Tamanho da fonte em pixels */
+    font-weight: 700; /* Negrito */
+    letter-spacing: 3px; /* Um pouco mais de espaço entre as letras */
     text-transform: uppercase;
 }
 
 .logo-sub {
     display: block;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-family: 'Quattrocento', serif; /* Aplica a fonte correta */
+    font-size: 30px; /* Tamanho da fonte em pixels */
+    font-weight: 700; /* Negrito */
+    letter-spacing: 2px;
     text-transform: uppercase;
+    margin-top: 5px; /* Adiciona um pequeno espaço acima */
 }
 
 /* --- SEÇÃO HERO --- */
@@ -479,3 +482,4 @@ body {
         font-size: 1.2rem;
     }
 }
+
