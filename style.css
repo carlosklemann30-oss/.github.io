@@ -292,6 +292,16 @@ body {
     transform: scale(1.1);
 }
 
+@media (max-width: 900px) {
+    .about-us .container,
+    .location,
+    .madeiras-qualidade-content,
+    .depoimentos-grid { /* ADICIONE AQUI */
+        flex-direction: column;
+        gap: 50px; /* Adiciona um espaço maior no modo coluna */
+    }
+
+
 /* --- REGRAS DE RESPONSIVIDADE --- */
 @media (max-width: 900px) {
     .about-us .container,
@@ -315,3 +325,4 @@ body {
         font-size: 2.5rem;
     }
 }
+
