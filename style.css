@@ -126,11 +126,13 @@ body {
 }
 
 .about-content h2 {
+    font-family: 'Quattrocento', serif; /* <-- FONTE ADICIONADA AQUI */
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
     text-transform: uppercase;
 }
+
 
 .about-content p {
     font-size: 1.1rem;
@@ -157,6 +159,7 @@ body {
 }
 
 .modelos h2, .titulo-secao {
+    font-family: 'Quattrocento', serif; /* <-- ADICIONE ESTA LINHA */
     text-align: center;
     font-size: 2.5rem;
     font-weight: 800;
@@ -244,10 +247,12 @@ body {
     text-transform: uppercase;
 }
 
-.location-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+..location-content h2 {
+    font-family: 'Quattrocento', serif; /* <-- FONTE ADICIONADA AQUI */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
 /* --- SEÇÃO MADEIRAS DE QUALIDADE --- */
@@ -283,12 +288,14 @@ body {
 }
 
 .madeiras-qualidade .texto-box h2 {
+    font-family: 'Quattrocento', serif; /* <-- FONTE ADICIONADA AQUI */
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     color: #333;
 }
+
 
 .madeiras-qualidade .texto-box p {
     font-size: 1.1rem;
@@ -517,5 +524,6 @@ body {
     .footer-logo-text .subtitulo {
         font-size: 1.2rem;
     }
+
 
 
