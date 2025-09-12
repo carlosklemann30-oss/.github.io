@@ -111,8 +111,9 @@ body {
 .about-us {
     background-color: #2b2b2b;
     color: #ffffff;
-    padding: 80px 0;
+    padding: 120px 0; /* Aumentado de 80px para 120px */
 }
+
 
 .about-us .container {
     display: flex;
@@ -152,7 +153,7 @@ body {
 /* --- SEÇÃO MODELOS POPULARES --- */
 .modelos {
     background-color: #f4f4f4;
-    padding: 80px 0;
+    padding: 120px 0; /* Aumentado de 80px para 120px */
 }
 
 .modelos h2, .titulo-secao {
@@ -251,7 +252,7 @@ body {
 
 /* --- SEÇÃO MADEIRAS DE QUALIDADE --- */
 .madeiras-qualidade {
-    padding: 80px 0;
+    padding: 120px 0; /* Aumentado de 80px para 120px */
     background-color: #f4f4f4;
 }
 
@@ -297,7 +298,7 @@ body {
 
 /* --- SEÇÃO DEPOIMENTOS --- */
 .depoimentos {
-    padding: 80px 0;
+    padding: 120px 0; /* Aumentado de 80px para 120px */
     background-color: #ffffff;
 }
 
@@ -516,4 +517,5 @@ body {
     .footer-logo-text .subtitulo {
         font-size: 1.2rem;
     }
+
 
