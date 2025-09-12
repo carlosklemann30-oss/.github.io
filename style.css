@@ -486,22 +486,34 @@ body {
         width: 100%;
         height: auto;
     }
-}
+    
 
 @media (max-width: 768px) {
+    /* --- AJUSTES GERAIS PARA MOBILE --- */
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* Reduz um pouco a chamada principal */
     }
+
+    .hero-text-box {
+        padding: 20px; /* Diminui o espaçamento interno da caixa de texto */
+    }
+
+    /* --- AJUSTE CRÍTICO DO LOGO PARA MOBILE --- */
     .logo-main {
-        font-size: 45px; /* Ajusta o tamanho para celular */
+        font-size: 36px; /* Tamanho ideal para o título no celular */
+        line-height: 1.1;
     }
+
     .logo-sub {
-        font-size: 28px; /* Ajusta o tamanho para celular */
+        font-size: 20px; /* Tamanho ideal para o subtítulo no celular */
     }
+
+    
+    /* --- AJUSTES DO RODAPÉ PARA MOBILE --- */
     .footer-logo-text .titulo-principal {
         font-size: 2rem;
     }
     .footer-logo-text .subtitulo {
         font-size: 1.2rem;
     }
-}
+
