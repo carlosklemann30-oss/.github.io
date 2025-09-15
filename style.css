@@ -11,6 +11,12 @@ body {
     color: #333;
 }
 
+picture img {
+    filter: blur(20px);
+    transform: scale(1.1);
+    transition: filter .3s ease, transform .3s ease;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -27,13 +33,15 @@ body {
 
 .logo {
     color: #000000;
-    line-height: 1.1; /* Reduz a altura da linha para aproximar */
+    line-height: 1.1;
+    /* Reduz a altura da linha para aproximar */
 }
 
 .logo-main {
     display: block;
     font-family: 'Quattrocento', serif;
-    font-size: 72px; /* Aumentado para 72px */
+    font-size: 72px;
+    /* Aumentado para 72px */
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -42,11 +50,13 @@ body {
 .logo-sub {
     display: block;
     font-family: 'Quattrocento', serif;
-    font-size: 40px; /* Aumentado para 40px */
+    font-size: 40px;
+    /* Aumentado para 40px */
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-top: -5px; /* Margem negativa para aproximar do título */
+    margin-top: -5px;
+    /* Margem negativa para aproximar do título */
 }
 
 /* --- SEÇÃO HERO (ESTILO FINAL) --- */
@@ -84,7 +94,8 @@ body {
 }
 
 .hero-text-box {
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo BRANCO, levemente transparente */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fundo BRANCO, levemente transparente */
     padding: 30px 50px;
     border-radius: 5px;
 }
@@ -124,7 +135,8 @@ body {
 .about-us {
     background-color: #2b2b2b;
     color: #ffffff;
-    padding: 120px 0; /* Aumentado de 80px para 120px */
+    padding: 120px 0;
+    /* Aumentado de 80px para 120px */
 }
 
 
@@ -139,7 +151,8 @@ body {
 }
 
 .about-content h2 {
-    font-family: 'Quattrocento', serif; /* <-- FONTE ADICIONADA AQUI */
+    font-family: 'Quattrocento', serif;
+    /* <-- FONTE ADICIONADA AQUI */
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -172,7 +185,8 @@ body {
 }
 
 /* Título padrão para as seções */
-.modelos h2, .titulo-secao {
+.modelos h2,
+.titulo-secao {
     font-family: 'Quattrocento', serif;
     text-align: center;
     font-size: 2.5rem;
@@ -191,7 +205,8 @@ body {
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Sombra inicial mais sutil */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    /* Sombra inicial mais sutil */
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -199,8 +214,10 @@ body {
 }
 
 .modelo-item:hover {
-    transform: translateY(-10px); /* Efeito de elevação mais pronunciado */
-    box-shadow: 0 12px 25px rgba(0,0,0,0.12); /* Sombra mais forte no hover */
+    transform: translateY(-10px);
+    /* Efeito de elevação mais pronunciado */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    /* Sombra mais forte no hover */
 }
 
 .modelo-imagem {
@@ -225,16 +242,19 @@ body {
 }
 
 .modelo-info p {
-    font-size: 0.9rem; /* Fonte da descrição ligeiramente menor */
+    font-size: 0.9rem;
+    /* Fonte da descrição ligeiramente menor */
     line-height: 1.6;
     color: #666;
     flex-grow: 1;
-    margin-bottom: 25px; /* Adiciona espaço antes do botão */
+    margin-bottom: 25px;
+    /* Adiciona espaço antes do botão */
 }
 
 /* Estilo do novo botão "Ver Detalhes" */
 .modelo-button {
-    background-color: #1a3d7c; /* Cor azul escura para combinar com o site */
+    background-color: #1a3d7c;
+    /* Cor azul escura para combinar com o site */
     color: #ffffff;
     padding: 12px 25px;
     text-decoration: none;
@@ -243,11 +263,13 @@ body {
     font-size: 0.9rem;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    align-self: center; /* Centraliza o botão no card */
+    align-self: center;
+    /* Centraliza o botão no card */
 }
 
 .modelo-button:hover {
-    background-color: #2b5ab2; /* Cor um pouco mais clara no hover */
+    background-color: #2b5ab2;
+    /* Cor um pouco mais clara no hover */
 }
 
 
@@ -274,7 +296,8 @@ body {
 }
 
 .location-content h2 {
-    font-family: 'Quattrocento', serif; /* <-- FONTE ADICIONADA AQUI */
+    font-family: 'Quattrocento', serif;
+    /* <-- FONTE ADICIONADA AQUI */
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -283,7 +306,8 @@ body {
 
 /* --- SEÇÃO MADEIRAS DE QUALIDADE --- */
 .madeiras-qualidade {
-    padding: 120px 0; /* Aumentado de 80px para 120px */
+    padding: 120px 0;
+    /* Aumentado de 80px para 120px */
     background-color: #f4f4f4;
 }
 
@@ -304,7 +328,7 @@ body {
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     display: block;
     border: none;
 }
@@ -314,7 +338,8 @@ body {
 }
 
 .madeiras-qualidade .texto-box h2 {
-    font-family: 'Quattrocento', serif; /* <-- FONTE ADICIONADA AQUI */
+    font-family: 'Quattrocento', serif;
+    /* <-- FONTE ADICIONADA AQUI */
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -331,7 +356,8 @@ body {
 
 /* --- SEÇÃO DEPOIMENTOS --- */
 .depoimentos {
-    padding: 120px 0; /* Aumentado de 80px para 120px */
+    padding: 120px 0;
+    /* Aumentado de 80px para 120px */
     background-color: #ffffff;
 }
 
@@ -497,6 +523,7 @@ body {
 
 /* --- REGRAS DE RESPONSIVIDADE --- */
 @media (max-width: 900px) {
+
     .about-us .container,
     .location,
     .madeiras-qualidade-content,
@@ -527,23 +554,28 @@ body {
 }
 
 @media (max-width: 768px) {
+
     /* --- AJUSTES GERAIS PARA MOBILE --- */
     .hero-content h1 {
-        font-size: 2.2rem; /* Reduz um pouco a chamada principal */
+        font-size: 2.2rem;
+        /* Reduz um pouco a chamada principal */
     }
 
     .hero-text-box {
-        padding: 20px; /* Diminui o espaçamento interno da caixa de texto */
+        padding: 20px;
+        /* Diminui o espaçamento interno da caixa de texto */
     }
 
     /* --- AJUSTE CRÍTICO DO LOGO PARA MOBILE --- */
     .logo-main {
-        font-size: 36px; /* Tamanho ideal para o título no celular */
+        font-size: 36px;
+        /* Tamanho ideal para o título no celular */
         line-height: 1.1;
     }
 
     .logo-sub {
-        font-size: 20px; /* Tamanho ideal para o subtítulo no celular */
+        font-size: 20px;
+        /* Tamanho ideal para o subtítulo no celular */
     }
 
 
@@ -551,6 +583,7 @@ body {
     .footer-logo-text .titulo-principal {
         font-size: 2rem;
     }
+
     .footer-logo-text .subtitulo {
         font-size: 1.2rem;
     }
@@ -558,17 +591,31 @@ body {
 
 /* --- BREAKPOINTS RESPONSIVOS --- */
 @media (min-width: 576px) {
-    .container { max-width: 540px; }
+    .container {
+        max-width: 540px;
+    }
 }
+
 @media (min-width: 768px) {
-    .container { max-width: 720px; }
+    .container {
+        max-width: 720px;
+    }
 }
+
 @media (min-width: 992px) {
-    .container { max-width: 960px; }
+    .container {
+        max-width: 960px;
+    }
 }
+
 @media (min-width: 1200px) {
-    .container { max-width: 1140px; }
+    .container {
+        max-width: 1140px;
+    }
 }
+
 @media (min-width: 1400px) {
-    .container { max-width: 1320px; }
+    .container {
+        max-width: 1320px;
+    }
 }
