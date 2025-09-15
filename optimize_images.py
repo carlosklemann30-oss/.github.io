@@ -45,11 +45,15 @@ def generate_variants(img_path: pathlib.Path, output_dir: pathlib.Path) -> str:
 
         # Save original format
         output_path = output_dir / f"{stem}-{label}{ext}"
-        resized.save(output_path, quality=90, optimize=True)
+        resized.save(output_path, quality=80, optimize=True)
 
         # Save WebP format for better compression
         webp_output_path = output_dir / f"{stem}-{label}.webp"
         resized.save(webp_output_path, format='WEBP', quality=90, optimize=True)
+
+        # Save AVIF format for even better compression
+        avif_output_path = output_dir / f"{stem}-{label}.avif"
+        resized.save(avif_output_path, format='AVIF', quality=50, optimize=True)
 
     # Create ultra-light blur placeholder that preserves original content
     blur = img.copy()

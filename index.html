@@ -1,14 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2b2b2b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Pirâmide Casas Pré-Fabricadas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- IMPORTAÇÃO DAS FONTES: Open Sans e a nova Quattrocento -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Quattrocento:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Quattrocento:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        /* Critical CSS - Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Critical - Header Styles */
+        .top-header {
+            background-color: #ffffff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .logo {
+            color: #000000;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            display: block;
+            font-family: 'Quattrocento', serif;
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo-sub {
+            display: block;
+            font-family: 'Quattrocento', serif;
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: -5px;
+        }
+
+        /* Critical - Hero Section */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            min-height: calc(var(--vh, 1vh) * 90);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(20px);
+            transform: scale(1.1);
+            transition: filter .3s ease, transform .3s ease;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero-text-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px 50px;
+            border-radius: 5px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Quattrocento', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2b2b2b;
+            text-transform: uppercase;
+            line-height: 1.3;
+            text-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .cta-button {
+            background-color: #25D366;
+            color: #ffffff;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Critical - Mobile Optimizations */
+        @media (max-width: 768px) {
+            .logo-main {
+                font-size: 36px;
+                line-height: 1.1;
+            }
+
+            .logo-sub {
+                font-size: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text-box {
+                padding: 20px;
+            }
+
+            .cta-button {
+                padding: 15px 40px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Critical - Smaller mobile devices */
+        @media (max-width: 480px) {
+            .logo-main {
+                font-size: 28px;
+            }
+
+            .logo-sub {
+                font-size: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text-box {
+                padding: 15px 20px;
+                margin: 0 10px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Image loading optimization */
+        picture img {
+            filter: blur(20px);
+            transform: scale(1.1);
+            transition: filter .3s ease, transform .3s ease;
+        }
+
+        /* Performance optimizations */
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+
+        /* Smooth scrolling for mobile */
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* Optimize button interactions for touch */
+        .cta-button,
+        .modelo-button,
+        .whatsapp-float {
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Prevent horizontal scroll on mobile */
+        body {
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
 </head>
+
 <body>
 
     <header class="top-header">
@@ -22,17 +243,24 @@
         <!-- ... (todas as outras seções do site continuam aqui, sem alteração ) ... -->
         <section class="hero">
             <picture class="hero-image">
+                <source media="(min-width: 1400px)" srcset="images/hero-bg-xxl.avif" type="image/avif">
                 <source media="(min-width: 1400px)" srcset="images/hero-bg-xxl.webp" type="image/webp">
                 <source media="(min-width: 1400px)" srcset="images/hero-bg-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/hero-bg-xl.avif" type="image/avif">
                 <source media="(min-width: 1200px)" srcset="images/hero-bg-xl.webp" type="image/webp">
                 <source media="(min-width: 1200px)" srcset="images/hero-bg-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/hero-bg-lg.avif" type="image/avif">
                 <source media="(min-width: 992px)" srcset="images/hero-bg-lg.webp" type="image/webp">
                 <source media="(min-width: 992px)" srcset="images/hero-bg-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/hero-bg-md.avif" type="image/avif">
                 <source media="(min-width: 768px)" srcset="images/hero-bg-md.webp" type="image/webp">
                 <source media="(min-width: 768px)" srcset="images/hero-bg-md.jpg">
+                <source srcset="images/hero-bg-sm.avif" type="image/avif">
                 <source srcset="images/hero-bg-sm.webp" type="image/webp">
                 <source srcset="images/hero-bg-sm.jpg">
-                <img src="data:image/webp;base64,UklGRhIDAABXRUJQVlA4IAYDAABQHQCdASqWAHEAP0GQulW/uyyttfWMy/AoCWMtgFgGsDUhAHa1b9ZgN+3YAv/dDcmNkt/KPb2UsnNykxGRI7gQwbdhU9bj2Ejou35+xgR/rCCPp7vFdShA6wt1mUE7qyFuTbkhS9XcR2eFkWAIfwcpCl43iKIeEuo0LKQmA81yJ9FWrVTP66dhyiT4cK3fSNGDKqq+O5K6fr1OX2c3oRRSu5P/ghNBzPBTDHD93PsCpSNLJWqNGHSnPrBpQISHFRyMPcH7WrcHaIiQ18QqGGqKH5wxLWd7q2H+nXLJFJ4F+YhEZX9dh69a5m/b0npV/yyMh6AA/uNFzeBoOl8AdCIE/asDldWlsXh30yRBtN9Vk1WVzfPSR3k/VP0jvRtHU/4XSQEF1oyDX7DxSyESORiNaoxModXSuTjG+jqkK16cHTcBx3zAxV3mWeIBpKLTKFp6g8fuj9CigpXKtbvejb9xe29o+6QC5ziKYLKcZe6eaKH5zjvpqGfUk74oeyQBn00Iv1RymhPJA9ukmiOkp2TskLL/fxFFm/DgsiV7aD2lKYjV9BVkZIo1FwKVJWqbvhWaSSHiNvrojVTBDe9CjQG039Sm8CfYpQrP9Je9rFj+NhEjtVetfUJ+qzU+lOPFE/XdseuOpSyq69lH4zTXsuVIQd0VoHCIkGj534/tWWC9iNLj0utdFYkGQ/9Cvgvwr/eF7OkfhIuChyqOUHrGNyjbQlmdE08wlElzWktUAjK3vJysHNPmGOfa/g8s1wT4PFftDt2eIYBT4rkuHbEUUSTshrhNaaKEGvDtZoX7Y/ykdf7SDl1HMXmFumh0QpGUvHGXiCs7rRZtAMwi1L9WwsOoKM7tAWbooAiM3FADLrfb8zvqjL+Y9k7RAnW9IXWhd3tzw2kzeQmvnRTP6QEw2dsAa1JxIHrh6D4N2BetiF3pnyoF0fCJnKbiU6Mi+ScPHqEYW8+KfJpYVBWUHz9Xm7cVOa4A64IDOk4Q84LEolr4DZscVUIQMuihpSqDfwKzs2u+NGVzAAA=" alt="imagem para o título: Pronto para começar um novo capítulo?" onload="this.style.filter='none';this.style.transform='none';">
+                <img src="data:image/webp;base64,UklGRhIDAABXRUJQVlA4IAYDAABQHQCdASqWAHEAP0GQulW/uyyttfWMy/AoCWMtgFgGsDUhAHa1b9ZgN+3YAv/dDcmNkt/KPb2UsnNykxGRI7gQwbdhU9bj2Ejou35+xgR/rCCPp7vFdShA6wt1mUE7qyFuTbkhS9XcR2eFkWAIfwcpCl43iKIeEuo0LKQmA81yJ9FWrVTP66dhyiT4cK3fSNGDKqq+O5K6fr1OX2c3oRRSu5P/ghNBzPBTDHD93PsCpSNLJWqNGHSnPrBpQISHFRyMPcH7WrcHaIiQ18QqGGqKH5wxLWd7q2H+nXLJFJ4F+YhEZX9dh69a5m/b0npV/yyMh6AA/uNFzeBoOl8AdCIE/asDldWlsXh30yRBtN9Vk1WVzfPSR3k/VP0jvRtHU/4XSQEF1oyDX7DxSyESORiNaoxModXSuTjG+jqkK16cHTcBx3zAxV3mWeIBpKLTKFp6g8fuj9CigpXKtbvejb9xe29o+6QC5ziKYLKcZe6eaKH5zjvpqGfUk74oeyQBn00Iv1RymhPJA9ukmiOkp2TskLL/fxFFm/DgsiV7aD2lKYjV9BVkZIo1FwKVJWqbvhWaSSHiNvrojVTBDe9CjQG039Sm8CfYpQrP9Je9rFj+NhEjtVetfUJ+qzU+lOPFE/XdseuOpSyq69lH4zTXsuVIQd0VoHCIkGj534/tWWC9iNLj0utdFYkGQ/9Cvgvwr/eF7OkfhIuChyqOUHrGNyjbQlmdE08wlElzWktUAjK3vJysHNPmGOfa/g8s1wT4PFftDt2eIYBT4rkuHbEUUSTshrhNaaKEGvDtZoX7Y/ykdf7SDl1HMXmFumh0QpGUvHGXiCs7rRZtAMwi1L9WwsOoKM7tAWbooAiM3FADLrfb8zvqjL+Y9k7RAnW9IXWhd3tzw2kzeQmvnRTP6QEw2dsAa1JxIHrh6D4N2BetiF3pnyoF0fCJnKbiU6Mi+ScPHqEYW8+KfJpYVBWUHz9Xm7cVOa4A64IDOk4Q84LEolr4DZscVUIQMuihpSqDfwKzs2u+NGVzAAA="
+                    alt="imagem para o título: Pronto para começar um novo capítulo?"
+                    onload="this.style.filter='none';this.style.transform='none';">
             </picture>
             <div class="hero-content">
                 <div class="hero-text-box">
@@ -46,36 +274,53 @@
             <div class="container">
                 <div class="about-content">
                     <h2>QUEM SOMOS</h2>
-                    <p>Com 15 anos de atuação no mercado do norte catarinense, desenvolvemos um método de trabalho que prioriza a qualidade e a satisfação do cliente.</p>
-                    <p>Entendemos que a construção de uma casa é um investimento significativo. Por isso, garantimos um serviço pautado pela transparência, pelo cumprimento de prazos e por um acabamento de qualidade.</p>
+                    <p>Com 15 anos de atuação no mercado do norte catarinense, desenvolvemos um método de trabalho que
+                        prioriza a qualidade e a satisfação do cliente.</p>
+                    <p>Entendemos que a construção de uma casa é um investimento significativo. Por isso, garantimos um
+                        serviço pautado pela transparência, pelo cumprimento de prazos e por um acabamento de qualidade.
+                    </p>
                     <p>Convidamos você a conhecer a solidez e a sofisticação que definem um projeto Pirâmide Casas.</p>
                 </div>
                 <div class="about-images">
                     <picture>
+                        <source media="(min-width: 1400px)" srcset="images/projeto1-xxl.avif" type="image/avif">
                         <source media="(min-width: 1400px)" srcset="images/projeto1-xxl.webp" type="image/webp">
                         <source media="(min-width: 1400px)" srcset="images/projeto1-xxl.jpg">
+                        <source media="(min-width: 1200px)" srcset="images/projeto1-xl.avif" type="image/avif">
                         <source media="(min-width: 1200px)" srcset="images/projeto1-xl.webp" type="image/webp">
                         <source media="(min-width: 1200px)" srcset="images/projeto1-xl.jpg">
+                        <source media="(min-width: 992px)" srcset="images/projeto1-lg.avif" type="image/avif">
                         <source media="(min-width: 992px)" srcset="images/projeto1-lg.webp" type="image/webp">
                         <source media="(min-width: 992px)" srcset="images/projeto1-lg.jpg">
+                        <source media="(min-width: 768px)" srcset="images/projeto1-md.avif" type="image/avif">
                         <source media="(min-width: 768px)" srcset="images/projeto1-md.webp" type="image/webp">
                         <source media="(min-width: 768px)" srcset="images/projeto1-md.jpg">
+                        <source srcset="images/projeto1-sm.avif" type="image/avif">
                         <source srcset="images/projeto1-sm.webp" type="image/webp">
                         <source srcset="images/projeto1-sm.jpg">
-                        <img src="data:image/webp;base64,UklGRvICAABXRUJQVlA4IOYCAACQGQCdASqWAGQAP0WKuVWwP7iktnY8M/AoiWIAxYR8FtqcmpUkaWgL/3yPDB+/tuRm0jXv4DjDpBbnzgzGwHE8NLHOdmR49GwqK8VSlG0wbPqLQxoNUCZwUYO2jfQ7dU/odJhVo1IMi7xhJ899EYVYeETT5Q3Kxb8Jfu1Go/yUjv9r0+6Lf2/JTpYele4qmdPw0Dohirc0CZbMDOi86X733DIqN96+40c9gZjbugwgsDs/c1n0ABXll3+hcxYLS6XDKqvNgxqdvkBdE9W97DZ1WvWr3QAA/sTsSbbgeOHcJvEmvfi74LTxX07rwUV1s40LJRHpeZbKV3b//xBCU6M0caSamPd/g1tz+xHxHGuOgpZ+hDWGs57rUVwXRDRM4riaRCw7Hx2yauA0csg78CG80i1o2ItuGENMulRqnKyWB8eHnAVRdrqdRSEvQEc4GqKn4dh9Jcw6X0X560ZBPCOxRwlOr2lkl3Xzs61UCUVr7KETt8oeoW+EAUtWt+/rAsQp4l3kUBd41fSe4HZFxFnSWAh0U4SyAbgt3kReThIIoVBnHXUjCDpxVgf9+9kpTLyaawf0iMhURWLRtSAxqqs/j9WeiffJZicTqdRt5Lsv44Pe4SgT8xCB4jV7mDr8BevryfZiM83O6UXCcEogKXt0K0e83L2vJGVZdysSwjYSE4OiicnKeu3swJQUL9wOHdNZ10eBTidm7Xx8lwG/zVcIK5dQSOva5n3hUGo+NLJbkBtsdArPCGz3HbNwMnkj/VfplcrfGkIjCfQ22Zu8Jd9r5cDITGML7/bXSGBZOv66QwwckjOA8sm6A3m09QMd+t9eWa4EuMiU2N0pzUb9I32amsLAkjNkNtU59xUsVhlfuZi46+bNMgMW8KJ4uVy7EAcob7M/9DCHbf+fbVtSkyek2aGnOLjGNx+2QMWlnt445HNXJONn9RWm/NEKfWsgFbuxBhzre4vWS/p4Kb0bxoLBldf9gAAA" alt="Casa pré-fabricada com varanda" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                        <img src="data:image/webp;base64,UklGRvICAABXRUJQVlA4IOYCAACQGQCdASqWAGQAP0WKuVWwP7iktnY8M/AoiWIAxYR8FtqcmpUkaWgL/3yPDB+/tuRm0jXv4DjDpBbnzgzGwHE8NLHOdmR49GwqK8VSlG0wbPqLQxoNUCZwUYO2jfQ7dU/odJhVo1IMi7xhJ899EYVYeETT5Q3Kxb8Jfu1Go/yUjv9r0+6Lf2/JTpYele4qmdPw0Dohirc0CZbMDOi86X733DIqN96+40c9gZjbugwgsDs/c1n0ABXll3+hcxYLS6XDKqvNgxqdvkBdE9W97DZ1WvWr3QAA/sTsSbbgeOHcJvEmvfi74LTxX07rwUV1s40LJRHpeZbKV3b//xBCU6M0caSamPd/g1tz+xHxHGuOgpZ+hDWGs57rUVwXRDRM4riaRCw7Hx2yauA0csg78CG80i1o2ItuGENMulRqnKyWB8eHnAVRdrqdRSEvQEc4GqKn4dh9Jcw6X0X560ZBPCOxRwlOr2lkl3Xzs61UCUVr7KETt8oeoW+EAUtWt+/rAsQp4l3kUBd41fSe4HZFxFnSWAh0U4SyAbgt3kReThIIoVBnHXUjCDpxVgf9+9kpTLyaawf0iMhURWLRtSAxqqs/j9WeiffJZicTqdRt5Lsv44Pe4SgT8xCB4jV7mDr8BevryfZiM83O6UXCcEogKXt0K0e83L2vJGVZdysSwjYSE4OiicnKeu3swJQUL9wOHdNZ10eBTidm7Xx8lwG/zVcIK5dQSOva5n3hUGo+NLJbkBtsdArPCGz3HbNwMnkj/VfplcrfGkIjCfQ22Zu8Jd9r5cDITGML7/bXSGBZOv66QwwckjOA8sm6A3m09QMd+t9eWa4EuMiU2N0pzUb9I32amsLAkjNkNtU59xUsVhlfuZi46+bNMgMW8KJ4uVy7EAcob7M/9DCHbf+fbVtSkyek2aGnOLjGNx+2QMWlnt445HNXJONn9RWm/NEKfWsgFbuxBhzre4vWS/p4Kb0bxoLBldf9gAAA"
+                            alt="Casa pré-fabricada com varanda" loading="lazy"
+                            onload="this.style.filter='none';this.style.transform='none';">
                     </picture>
                     <picture>
+                        <source media="(min-width: 1400px)" srcset="images/projeto2-xxl.avif" type="image/avif">
                         <source media="(min-width: 1400px)" srcset="images/projeto2-xxl.webp" type="image/webp">
                         <source media="(min-width: 1400px)" srcset="images/projeto2-xxl.jpg">
+                        <source media="(min-width: 1200px)" srcset="images/projeto2-xl.avif" type="image/avif">
                         <source media="(min-width: 1200px)" srcset="images/projeto2-xl.webp" type="image/webp">
                         <source media="(min-width: 1200px)" srcset="images/projeto2-xl.jpg">
+                        <source media="(min-width: 992px)" srcset="images/projeto2-lg.avif" type="image/avif">
                         <source media="(min-width: 992px)" srcset="images/projeto2-lg.webp" type="image/webp">
                         <source media="(min-width: 992px)" srcset="images/projeto2-lg.jpg">
+                        <source media="(min-width: 768px)" srcset="images/projeto2-md.avif" type="image/avif">
                         <source media="(min-width: 768px)" srcset="images/projeto2-md.webp" type="image/webp">
                         <source media="(min-width: 768px)" srcset="images/projeto2-md.jpg">
+                        <source srcset="images/projeto2-sm.avif" type="image/avif">
                         <source srcset="images/projeto2-sm.webp" type="image/webp">
                         <source srcset="images/projeto2-sm.jpg">
-                        <img src="data:image/webp;base64,UklGRl4DAABXRUJQVlA4IFIDAAAwIACdASqWAHcAP0GMt1WvsTEtt/WcAiAoCU27MBieTGsL9rz+jdP/O+yAv/dIpW/FoJDzMx7vtB/uYpZ889x98OhA1FuDJObrL3A//XTZPzYG7XnGWTyii/b48eefZcAITTD4xI3lJb/Ri0A82ynHJbVOluzIzRjt3uRZGr7JcrCFsNzmFT1X52RmtZkJ7eAQOUEkfDOZU4Tcs53a4WeVNGAF5gCJNFgzPTT06BCIG48VwJr4wBeiSwxvzQQ8XgldF2saZ4In0DHj5SeLNccQErQegOimvNwUIzUjuoOq9G86N95UfehfyD1Hh9OrTboPVeGgZynXgUOlzn0WATENhYH728FyOl9NEAD+5K2v4q1pyUnpIwbsksGPaG0YVylJ/7BBz2a+BExi4rLrKiAy+b1xT+oNs/Xvv9fZ1I1OtYpqvE4seRH3PL1PDlAfDnm1S7XnpWMOGPnt9D1epDOEYDZ4ALUTz8Z2Q2Ruc/jERvrB4eYu5WIuYgztmH+PUkB7tkG/Qm0Jyc+ah+xYGXNtBbP8on1OunUqrr3Mq4E3UkwBO2FCeqTpz1t5MdJSVpUA1J0QEbIVse/XGyN6L9RvMsGjd+pMuJ8SXjKxpqx5uuAyvK1zgC+83kZ4MXzo4b7x5j8UM4MMrWvkEnEGdj/rdckKkk1xck4SGOpn8ocbhxT/nEBL9SjNRM6qO0SDPKH8Y336TH6VENLK0tQighoO+vb73hhehpXAsl3LogDswcI6HKXDW9pw+2UtglmaHrb8WNUSl7GOMiOrCqPRY2zrSEY4ozPRSjCzSBNnfock29e+BafZ7D7h2HQsZS99FbAdgQpiOYCKGrWRDvy/kgxCcsPWRJAIXebciezTcgXLm6lGhGECGjhxRLgEhWmtuegapOCh0bahDCuzkDV9M/zdPnhfYDy2Wty9NDxO1r2OxGvv55darBD1msdHT1XJURxzc/lpJxRdbyr+ZPY7DRq+P7TiQsDDercFHd2QQVab7M/4vXIldY7ChY2hSnCdn5KCAlE5PnKRf0NKXS92AP/gOcj8RcS8QNklz5dYicaqldWLoJB5Xi6OaMiJIILKNnzCD2AXZQEu3coReWncamqSL4mpeYqWiAuiLB4xz9yb/RAA" alt="Casa pré-fabricada de dois andares" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                        <img src="data:image/webp;base64,UklGRl4DAABXRUJQVlA4IFIDAAAwIACdASqWAHcAP0GMt1WvsTEtt/WcAiAoCU27MBieTGsL9rz+jdP/O+yAv/dIpW/FoJDzMx7vtB/uYpZ889x98OhA1FuDJObrL3A//XTZPzYG7XnGWTyii/b48eefZcAITTD4xI3lJb/Ri0A82ynHJbVOluzIzRjt3uRZGr7JcrCFsNzmFT1X52RmtZkJ7eAQOUEkfDOZU4Tcs53a4WeVNGAF5gCJNFgzPTT06BCIG48VwJr4wBeiSwxvzQQ8XgldF2saZ4In0DHj5SeLNccQErQegOimvNwUIzUjuoOq9G86N95UfehfyD1Hh9OrTboPVeGgZynXgUOlzn0WATENhYH728FyOl9NEAD+5K2v4q1pyUnpIwbsksGPaG0YVylJ/7BBz2a+BExi4rLrKiAy+b1xT+oNs/Xvv9fZ1I1OtYpqvE4seRH3PL1PDlAfDnm1S7XnpWMOGPnt9D1epDOEYDZ4ALUTz8Z2Q2Ruc/jERvrB4eYu5WIuYgztmH+PUkB7tkG/Qm0Jyc+ah+xYGXNtBbP8on1OunUqrr3Mq4E3UkwBO2FCeqTpz1t5MdJSVpUA1J0QEbIVse/XGyN6L9RvMsGjd+pMuJ8SXjKxpqx5uuAyvK1zgC+83kZ4MXzo4b7x5j8UM4MMrWvkEnEGdj/rdckKkk1xck4SGOpn8ocbhxT/nEBL9SjNRM6qO0SDPKH8Y336TH6VENLK0tQighoO+vb73hhehpXAsl3LogDswcI6HKXDW9pw+2UtglmaHrb8WNUSl7GOMiOrCqPRY2zrSEY4ozPRSjCzSBNnfock29e+BafZ7D7h2HQsZS99FbAdgQpiOYCKGrWRDvy/kgxCcsPWRJAIXebciezTcgXLm6lGhGECGjhxRLgEhWmtuegapOCh0bahDCuzkDV9M/zdPnhfYDy2Wty9NDxO1r2OxGvv55darBD1msdHT1XJURxzc/lpJxRdbyr+ZPY7DRq+P7TiQsDDercFHd2QQVab7M/4vXIldY7ChY2hSnCdn5KCAlE5PnKRf0NKXS92AP/gOcj8RcS8QNklz5dYicaqldWLoJB5Xi6OaMiJIILKNnzCD2AXZQEu3coReWncamqSL4mpeYqWiAuiLB4xz9yb/RAA"
+                            alt="Casa pré-fabricada de dois andares" loading="lazy"
+                            onload="this.style.filter='none';this.style.transform='none';">
                     </picture>
                 </div>
             </div>
@@ -85,92 +330,129 @@
             <div class="container">
 
                 <h2 class="titulo-secao">MODELOS POPULARES</h2>
-          <div class="modelos-grid">
-    <!-- Modelo 1 -->
-    <div class="modelo-item">
-        <picture>
-            <source media="(min-width: 1400px)" srcset="images/projeto3-xxl.webp" type="image/webp">
-            <source media="(min-width: 1400px)" srcset="images/projeto3-xxl.jpg">
-            <source media="(min-width: 1200px)" srcset="images/projeto3-xl.webp" type="image/webp">
-            <source media="(min-width: 1200px)" srcset="images/projeto3-xl.jpg">
-            <source media="(min-width: 992px)" srcset="images/projeto3-lg.webp" type="image/webp">
-            <source media="(min-width: 992px)" srcset="images/projeto3-lg.jpg">
-            <source media="(min-width: 768px)" srcset="images/projeto3-md.webp" type="image/webp">
-            <source media="(min-width: 768px)" srcset="images/projeto3-md.jpg">
-            <source srcset="images/projeto3-sm.webp" type="image/webp">
-            <source srcset="images/projeto3-sm.jpg">
-            <img class="modelo-imagem" src="data:image/webp;base64,UklGRjQDAABXRUJQVlA4ICgDAADQHgCdASqWAHEAP0WMuVW/v6wttfa8K/AoiUDfHM03O9gRV1NLnYfFg/Wb0gmLhXnymc65anibvnHAYMAlMH3/dJgP7+UVaNO63wNsd1clpsGj+Hk6VgGQsp8TEft6NGEZhCaxg7nfpUknsLFOMjjt/Pv+VMfrz0ziBSz3OPJX9ncI4EWquR5EcaG7Gray03taRlUKjr1st92ipKoqvgWp83PI6VPkj7hkmXvrWr0EGlP9Mf62wNzgyUZDf2P9qe9I+AemR/Ry96QCbWaLnF5xnr+g4x2+25la1zsh5XhPgD1QPYACIFt6sxfauOgdgB++dxZZnF9M+O3+EHeEzUAA/vEEmxZbmK6djoM+leLbOvrRC+ELOYOMc8GRwnYhZhvy0hr+wani88GwOdBP+r8jba1OAwtnz/oHb+0TCDwu1KlwIUqWVyOTjhOtkoDKqPylepgxAUWN7FOt90P+/jXlZJ9Lvga+IhtxUU+d5PPwzVc1FS/IhqdpvBydElxPELoEkXKh5rkUM++TkCI2u4e68xzfWOVY8MVVmZzDFgDCwLu+xmEJgB5JuznhuXoubM8k0xu7aZxzJt8KqYIUWmxkj/PfTj/5hPRxrFee0NxSM/QTGTI/fFNpAzQOx62ACR/srajs6qM2/1+Y5IzGUHbtKD1nuDgk2CP2s1KwuT0Px0FxOcdSOYS/iIFyO0r/Fscl0jcqikgNRsfIocxKkFhlR8Zobe5cqVe5vZyR/PtpY53Lr/SegyBGXxCWOkTiXorfaE1hWS4DICgm1J9y+Po5x7a2GqPjMcO7HDB3YCmgZsjIASLXRBnKfeiKWvPP1maMKrtLbAZGlbfcyCfK/P4vaAFdKZ81BPpIG9oUhIUKF7Nc4gWkkshy5lbRsojAIgnR8Z6qx9E5bcrjw1Ya8YjfX9DnvS02H4Ry9+FT316qIOGS+0JQeB1LFTJP9mr0sFT9zCyewjBYzkYbHOgkg9SVfmMuG/XfoSOmrLu59665Ykccjan6B4nFFPbn6sbEtMkRevKdlbW2zfO8na2kz7PXA+3EakoEGKOqDQw8SDOouNWxTgjkAAAA" alt="Casa de madeira pré-fabricada" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
-        </picture>
-        <div class="modelo-info">
-            <h3>Projetos Em Madeira</h3>
-            <p>2 Quartos | 1 Banheiros | Sala e Cozinha conjugada. Imóvel acessível para investimento em locação</p>
-            <a href="#" class="modelo-button">Ver Detalhes</a>
-        </div>
-    </div>
-    <!-- Modelo 2 -->
-    <div class="modelo-item">
-        <picture>
-            <source media="(min-width: 1400px)" srcset="images/protejo4-xxl.webp" type="image/webp">
-            <source media="(min-width: 1400px)" srcset="images/protejo4-xxl.jpg">
-            <source media="(min-width: 1200px)" srcset="images/protejo4-xl.webp" type="image/webp">
-            <source media="(min-width: 1200px)" srcset="images/protejo4-xl.jpg">
-            <source media="(min-width: 992px)" srcset="images/protejo4-lg.webp" type="image/webp">
-            <source media="(min-width: 992px)" srcset="images/protejo4-lg.jpg">
-            <source media="(min-width: 768px)" srcset="images/protejo4-md.webp" type="image/webp">
-            <source media="(min-width: 768px)" srcset="images/protejo4-md.jpg">
-            <source srcset="images/protejo4-sm.webp" type="image/webp">
-            <source srcset="images/protejo4-sm.jpg">
-            <img class="modelo-imagem" src="data:image/webp;base64,UklGRgwDAABXRUJQVlA4IAADAAAQHwCdASqWAHEAP0mOtFW/v6UpOZIKA/ApCUWwCwAss1T27sRi/7CvYKxQdA1XcS0WH/N/9LcqnKsVGr4Jtp2bEl76GYopJF7fN1x9UPamhIF0ughZQ5qQrhomC3vBMNAKx7Q83ZDVDav4SkiRGQNx2pj3Lybti0155kjOslUO8mV6hCzAB0j9oHs4JSgEEvXS5SoIjOSlEk4B2rQjFPgKW6Zres+926Wq485PwFZ3LGS4qG3+uCek3De9xI+h8L8Z8U/J1MeuD1ybXRrzY29cEOLBeLIL24nIs30cp4PIEjKa1/54ByC9a0Cx31ovIZM+sMUuVqoup1cUZyTBQphXgAD9EPvzfap0xXRbf9T7stHHIraJAAKtYA882w9WbcrVueQ/eyK8ZOtJhj/VFsV8wRYPaYm6iBj2qnX71soWp5SYw5V/8dhemWBFEF0mIWrY+tZsDSe4t+Wo2c9mJnZHcPizzUAd06KtMtbjYT1XEm0+ymw72XUDwEOiI6VSQvUsqQ47OehC1nczUKfs20k5PC2zcqit5l1eFWCDaNu4bRnUHpxQ08cRWcbxnF8desD29bnOZcQYUAudPxvSbxtF5YhQTPFoXqYujiMCxxlQ3UBCC4sCVBGpSjqIEjNvgaPrBFrBhz7WTLXXScJspiRLXpQxpqJpFaGpMT4MZ2glGtCFmaDvggY7CBIkgc79ql2spS9kwRl0/77wHhXtRbWlc53HwGeT9z3XC0xNCOjRDqLwm+9fbhMH2CwJHpMB/P0LqfxhW4cWAz460xdBfJBdwkoVSVeLYF1Ai2/rFI86CkacHLBbyPnxQhZYcKT1Qd+dn9bJ7PrHITKOqjor4rDZP7WlliHUSxEEQh/CAgbj3zzdV2bqfxryJuVQqU0f6Ubcmv5kBXbgCfUJKaIVjQuFkL5ou7P3g0l17U3+9xl+2lQ73uFKl9HCAZz5MOQZdisfFlWNN+fEsv8rTKa6wCN51uhhSPm4mhjUg5ssnpdPwEGtK7B5OfITPJfe9eu8AAA=" alt="Casa de alvenaria pré-fabricada" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
-        </picture>
-        <div class="modelo-info">
-            <h3>Projetos Em Alvenaria</h3>
-            <p>3 Quartos | 1 Banheiros |Sala e Cozinha conjugada. Projeto clean para moradia</p>
-            <a href="#" class="modelo-button">Ver Detalhes</a>
-        </div>
-    </div>
-    <!-- Modelo 3 -->
-    <div class="modelo-item">
-        <picture>
-            <source media="(min-width: 1400px)" srcset="images/projeto5-xxl.webp" type="image/webp">
-            <source media="(min-width: 1400px)" srcset="images/projeto5-xxl.jpg">
-            <source media="(min-width: 1200px)" srcset="images/projeto5-xl.webp" type="image/webp">
-            <source media="(min-width: 1200px)" srcset="images/projeto5-xl.jpg">
-            <source media="(min-width: 992px)" srcset="images/projeto5-lg.webp" type="image/webp">
-            <source media="(min-width: 992px)" srcset="images/projeto5-lg.jpg">
-            <source media="(min-width: 768px)" srcset="images/projeto5-md.webp" type="image/webp">
-            <source media="(min-width: 768px)" srcset="images/projeto5-md.jpg">
-            <source srcset="images/projeto5-sm.webp" type="image/webp">
-            <source srcset="images/projeto5-sm.jpg">
-            <img class="modelo-imagem" src="data:image/webp;base64,UklGRmoCAABXRUJQVlA4IF4CAADQFgCdASqWAHEAP1GWwFW/v7aksnXqI/AqCUDg7es5hjROmMyhFDf+SDPAADfvu2WebYSbBHdOdkThi/y9LhGANZLbqxAetkAAGVVj7xiTFmwRhm9BeWs+dIUglO19SBT5sX1eWJhw7UzwKH0GSpucO1ROxqqjXaIe8bCKM2QgFqhXYvedFYMAKteDaYUX8p+SO0lGOJmkpHCoYjee8WGa82qBWCz0QQWqISCIgOuCcbZifqRi6eK0FdZoqaVKIAD+5Qr+7L3tLV/VV9shv9i9oiwLSITL79st+W+krCHzdbfJ7c5z64s7y00Qy3fm1nUcl0uwFNbGJEb5cH/uAA3BL9Bpt3sTjLReUYZ5FqFOOqtn1fL1FLo9m6SZ4fth7Vye1RwgPexpnHTXsok3ucd7ZwkszOtv4//yzY3yKhauWChOfqh0S37BIXhRcW1P5eZ+eYXmw6ipQOsMmjbZIXWJdfIAhpme4wUqXYA4JaRSuqDgnL6NFFXJCSIhp10TvazgJv3PhQw5pThYRAPk+LgGyESsPm8sSBvU3SzJHZLN42Ty092tPuMpRPKGrdVzKbVZI9XpJlPSYGIZZcn+iWVHPzkp6x4xS59exD+cCYv/fNC9NPF39N2WXVUGP6Ca1dklDJ4CEvtdi0308x4XEarkh1xnqhdpcq0tnHwhcM50N0quQypeNT32bipt59D9slTKlHL38oGWYMlVHhy8fzPeH5x47fDMUfulCP2QcJdLc9AbVail9rpI9QGEf/IP4gc6qJJagMXj493rKYbVy2udNBAKzRzEplzRz5Ou4AA=" alt="Chalé de madeira pré-fabricado" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
-        </picture>
-        <div class="modelo-info">
-            <h3>Projetos Chalés</h3>
-            <p>Chalés em madeira ou Stell Frame para instalação no campo ou litoral</p>
-            <a href="#" class="modelo-button">Ver Detalhes</a>
-        </div>
-    </div>
-</div>
+                <div class="modelos-grid">
+                    <!-- Modelo 1 -->
+                    <div class="modelo-item">
+                        <picture>
+                            <source media="(min-width: 1400px)" srcset="images/projeto3-xxl.avif" type="image/avif">
+                            <source media="(min-width: 1400px)" srcset="images/projeto3-xxl.webp" type="image/webp">
+                            <source media="(min-width: 1400px)" srcset="images/projeto3-xxl.jpg">
+                            <source media="(min-width: 1200px)" srcset="images/projeto3-xl.avif" type="image/avif">
+                            <source media="(min-width: 1200px)" srcset="images/projeto3-xl.webp" type="image/webp">
+                            <source media="(min-width: 1200px)" srcset="images/projeto3-xl.jpg">
+                            <source media="(min-width: 992px)" srcset="images/projeto3-lg.avif" type="image/avif">
+                            <source media="(min-width: 992px)" srcset="images/projeto3-lg.webp" type="image/webp">
+                            <source media="(min-width: 992px)" srcset="images/projeto3-lg.jpg">
+                            <source media="(min-width: 768px)" srcset="images/projeto3-md.avif" type="image/avif">
+                            <source media="(min-width: 768px)" srcset="images/projeto3-md.webp" type="image/webp">
+                            <source media="(min-width: 768px)" srcset="images/projeto3-md.jpg">
+                            <source srcset="images/projeto3-sm.avif" type="image/avif">
+                            <source srcset="images/projeto3-sm.webp" type="image/webp">
+                            <source srcset="images/projeto3-sm.jpg">
+                            <img class="modelo-imagem"
+                                src="data:image/webp;base64,UklGRjQDAABXRUJQVlA4ICgDAADQHgCdASqWAHEAP0WMuVW/v6wttfa8K/AoiUDfHM03O9gRV1NLnYfFg/Wb0gmLhXnymc65anibvnHAYMAlMH3/dJgP7+UVaNO63wNsd1clpsGj+Hk6VgGQsp8TEft6NGEZhCaxg7nfpUknsLFOMjjt/Pv+VMfrz0ziBSz3OPJX9ncI4EWquR5EcaG7Gray03taRlUKjr1st92ipKoqvgWp83PI6VPkj7hkmXvrWr0EGlP9Mf62wNzgyUZDf2P9qe9I+AemR/Ry96QCbWaLnF5xnr+g4x2+25la1zsh5XhPgD1QPYACIFt6sxfauOgdgB++dxZZnF9M+O3+EHeEzUAA/vEEmxZbmK6djoM+leLbOvrRC+ELOYOMc8GRwnYhZhvy0hr+wani88GwOdBP+r8jba1OAwtnz/oHb+0TCDwu1KlwIUqWVyOTjhOtkoDKqPylepgxAUWN7FOt90P+/jXlZJ9Lvga+IhtxUU+d5PPwzVc1FS/IhqdpvBydElxPELoEkXKh5rkUM++TkCI2u4e68xzfWOVY8MVVmZzDFgDCwLu+xmEJgB5JuznhuXoubM8k0xu7aZxzJt8KqYIUWmxkj/PfTj/5hPRxrFee0NxSM/QTGTI/fFNpAzQOx62ACR/srajs6qM2/1+Y5IzGUHbtKD1nuDgk2CP2s1KwuT0Px0FxOcdSOYS/iIFyO0r/Fscl0jcqikgNRsfIocxKkFhlR8Zobe5cqVe5vZyR/PtpY53Lr/SegyBGXxCWOkTiXorfaE1hWS4DICgm1J9y+Po5x7a2GqPjMcO7HDB3YCmgZsjIASLXRBnKfeiKWvPP1maMKrtLbAZGlbfcyCfK/P4vaAFdKZ81BPpIG9oUhIUKF7Nc4gWkkshy5lbRsojAIgnR8Z6qx9E5bcrjw1Ya8YjfX9DnvS02H4Ry9+FT316qIOGS+0JQeB1LFTJP9mr0sFT9zCyewjBYzkYbHOgkg9SVfmMuG/XfoSOmrLu59665Ykccjan6B4nFFPbn6sbEtMkRevKdlbW2zfO8na2kz7PXA+3EakoEGKOqDQw8SDOouNWxTgjkAAAA"
+                                alt="Casa de madeira pré-fabricada" loading="lazy"
+                                onload="this.style.filter='none';this.style.transform='none';">
+                        </picture>
+                        <div class="modelo-info">
+                            <h3>Projetos Em Madeira</h3>
+                            <p>2 Quartos | 1 Banheiros | Sala e Cozinha conjugada. Imóvel acessível para investimento em
+                                locação</p>
+                            <a href="#" class="modelo-button">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <!-- Modelo 2 -->
+                    <div class="modelo-item">
+                        <picture>
+                            <source media="(min-width: 1400px)" srcset="images/protejo4-xxl.avif" type="image/avif">
+                            <source media="(min-width: 1400px)" srcset="images/protejo4-xxl.webp" type="image/webp">
+                            <source media="(min-width: 1400px)" srcset="images/protejo4-xxl.jpg">
+                            <source media="(min-width: 1200px)" srcset="images/protejo4-xl.avif" type="image/avif">
+                            <source media="(min-width: 1200px)" srcset="images/protejo4-xl.webp" type="image/webp">
+                            <source media="(min-width: 1200px)" srcset="images/protejo4-xl.jpg">
+                            <source media="(min-width: 992px)" srcset="images/protejo4-lg.avif" type="image/avif">
+                            <source media="(min-width: 992px)" srcset="images/protejo4-lg.webp" type="image/webp">
+                            <source media="(min-width: 992px)" srcset="images/protejo4-lg.jpg">
+                            <source media="(min-width: 768px)" srcset="images/protejo4-md.avif" type="image/avif">
+                            <source media="(min-width: 768px)" srcset="images/protejo4-md.webp" type="image/webp">
+                            <source media="(min-width: 768px)" srcset="images/protejo4-md.jpg">
+                            <source srcset="images/protejo4-sm.avif" type="image/avif">
+                            <source srcset="images/protejo4-sm.webp" type="image/webp">
+                            <source srcset="images/protejo4-sm.jpg">
+                            <img class="modelo-imagem"
+                                src="data:image/webp;base64,UklGRgwDAABXRUJQVlA4IAADAAAQHwCdASqWAHEAP0mOtFW/v6UpOZIKA/ApCUWwCwAss1T27sRi/7CvYKxQdA1XcS0WH/N/9LcqnKsVGr4Jtp2bEl76GYopJF7fN1x9UPamhIF0ughZQ5qQrhomC3vBMNAKx7Q83ZDVDav4SkiRGQNx2pj3Lybti0155kjOslUO8mV6hCzAB0j9oHs4JSgEEvXS5SoIjOSlEk4B2rQjFPgKW6Zres+926Wq485PwFZ3LGS4qG3+uCek3De9xI+h8L8Z8U/J1MeuD1ybXRrzY29cEOLBeLIL24nIs30cp4PIEjKa1/54ByC9a0Cx31ovIZM+sMUuVqoup1cUZyTBQphXgAD9EPvzfap0xXRbf9T7stHHIraJAAKtYA882w9WbcrVueQ/eyK8ZOtJhj/VFsV8wRYPaYm6iBj2qnX71soWp5SYw5V/8dhemWBFEF0mIWrY+tZsDSe4t+Wo2c9mJnZHcPizzUAd06KtMtbjYT1XEm0+ymw72XUDwEOiI6VSQvUsqQ47OehC1nczUKfs20k5PC2zcqit5l1eFWCDaNu4bRnUHpxQ08cRWcbxnF8desD29bnOZcQYUAudPxvSbxtF5YhQTPFoXqYujiMCxxlQ3UBCC4sCVBGpSjqIEjNvgaPrBFrBhz7WTLXXScJspiRLXpQxpqJpFaGpMT4MZ2glGtCFmaDvggY7CBIkgc79ql2spS9kwRl0/77wHhXtRbWlc53HwGeT9z3XC0xNCOjRDqLwm+9fbhMH2CwJHpMB/P0LqfxhW4cWAz460xdBfJBdwkoVSVeLYF1Ai2/rFI86CkacHLBbyPnxQhZYcKT1Qd+dn9bJ7PrHITKOqjor4rDZP7WlliHUSxEEQh/CAgbj3zzdV2bqfxryJuVQqU0f6Ubcmv5kBXbgCfUJKaIVjQuFkL5ou7P3g0l17U3+9xl+2lQ73uFKl9HCAZz5MOQZdisfFlWNN+fEsv8rTKa6wCN51uhhSPm4mhjUg5ssnpdPwEGtK7B5OfITPJfe9eu8AAA="
+                                alt="Casa de alvenaria pré-fabricada" loading="lazy"
+                                onload="this.style.filter='none';this.style.transform='none';">
+                        </picture>
+                        <div class="modelo-info">
+                            <h3>Projetos Em Alvenaria</h3>
+                            <p>3 Quartos | 1 Banheiros |Sala e Cozinha conjugada. Projeto clean para moradia</p>
+                            <a href="#" class="modelo-button">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <!-- Modelo 3 -->
+                    <div class="modelo-item">
+                        <picture>
+                            <source media="(min-width: 1400px)" srcset="images/projeto5-xxl.avif" type="image/avif">
+                            <source media="(min-width: 1400px)" srcset="images/projeto5-xxl.webp" type="image/webp">
+                            <source media="(min-width: 1400px)" srcset="images/projeto5-xxl.jpg">
+                            <source media="(min-width: 1200px)" srcset="images/projeto5-xl.avif" type="image/avif">
+                            <source media="(min-width: 1200px)" srcset="images/projeto5-xl.webp" type="image/webp">
+                            <source media="(min-width: 1200px)" srcset="images/projeto5-xl.jpg">
+                            <source media="(min-width: 992px)" srcset="images/projeto5-lg.avif" type="image/avif">
+                            <source media="(min-width: 992px)" srcset="images/projeto5-lg.webp" type="image/webp">
+                            <source media="(min-width: 992px)" srcset="images/projeto5-lg.jpg">
+                            <source media="(min-width: 768px)" srcset="images/projeto5-md.avif" type="image/avif">
+                            <source media="(min-width: 768px)" srcset="images/projeto5-md.webp" type="image/webp">
+                            <source media="(min-width: 768px)" srcset="images/projeto5-md.jpg">
+                            <source srcset="images/projeto5-sm.avif" type="image/avif">
+                            <source srcset="images/projeto5-sm.webp" type="image/webp">
+                            <source srcset="images/projeto5-sm.jpg">
+                            <img class="modelo-imagem"
+                                src="data:image/webp;base64,UklGRmoCAABXRUJQVlA4IF4CAADQFgCdASqWAHEAP1GWwFW/v7aksnXqI/AqCUDg7es5hjROmMyhFDf+SDPAADfvu2WebYSbBHdOdkThi/y9LhGANZLbqxAetkAAGVVj7xiTFmwRhm9BeWs+dIUglO19SBT5sX1eWJhw7UzwKH0GSpucO1ROxqqjXaIe8bCKM2QgFqhXYvedFYMAKteDaYUX8p+SO0lGOJmkpHCoYjee8WGa82qBWCz0QQWqISCIgOuCcbZifqRi6eK0FdZoqaVKIAD+5Qr+7L3tLV/VV9shv9i9oiwLSITL79st+W+krCHzdbfJ7c5z64s7y00Qy3fm1nUcl0uwFNbGJEb5cH/uAA3BL9Bpt3sTjLReUYZ5FqFOOqtn1fL1FLo9m6SZ4fth7Vye1RwgPexpnHTXsok3ucd7ZwkszOtv4//yzY3yKhauWChOfqh0S37BIXhRcW1P5eZ+eYXmw6ipQOsMmjbZIXWJdfIAhpme4wUqXYA4JaRSuqDgnL6NFFXJCSIhp10TvazgJv3PhQw5pThYRAPk+LgGyESsPm8sSBvU3SzJHZLN42Ty092tPuMpRPKGrdVzKbVZI9XpJlPSYGIZZcn+iWVHPzkp6x4xS59exD+cCYv/fNC9NPF39N2WXVUGP6Ca1dklDJ4CEvtdi0308x4XEarkh1xnqhdpcq0tnHwhcM50N0quQypeNT32bipt59D9slTKlHL38oGWYMlVHhy8fzPeH5x47fDMUfulCP2QcJdLc9AbVail9rpI9QGEf/IP4gc6qJJagMXj493rKYbVy2udNBAKzRzEplzRz5Ou4AA="
+                                alt="Chalé de madeira pré-fabricado" loading="lazy"
+                                onload="this.style.filter='none';this.style.transform='none';">
+                        </picture>
+                        <div class="modelo-info">
+                            <h3>Projetos Chalés</h3>
+                            <p>Chalés em madeira ou Stell Frame para instalação no campo ou litoral</p>
+                            <a href="#" class="modelo-button">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <section class="location">
             <picture>
+                <source media="(min-width: 1400px)" srcset="images/local-joinville-xxl.avif" type="image/avif">
                 <source media="(min-width: 1400px)" srcset="images/local-joinville-xxl.webp" type="image/webp">
                 <source media="(min-width: 1400px)" srcset="images/local-joinville-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/local-joinville-xl.avif" type="image/avif">
                 <source media="(min-width: 1200px)" srcset="images/local-joinville-xl.webp" type="image/webp">
                 <source media="(min-width: 1200px)" srcset="images/local-joinville-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/local-joinville-lg.avif" type="image/avif">
                 <source media="(min-width: 992px)" srcset="images/local-joinville-lg.webp" type="image/webp">
                 <source media="(min-width: 992px)" srcset="images/local-joinville-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/local-joinville-md.avif" type="image/avif">
                 <source media="(min-width: 768px)" srcset="images/local-joinville-md.webp" type="image/webp">
                 <source media="(min-width: 768px)" srcset="images/local-joinville-md.jpg">
+                <source srcset="images/local-joinville-sm.avif" type="image/avif">
                 <source srcset="images/local-joinville-sm.webp" type="image/webp">
                 <source srcset="images/local-joinville-sm.jpg">
-                <img class="location-image" src="data:image/webp;base64,UklGRn4DAABXRUJQVlA4IHIDAACQHwCdASpkAJYAPy2CtVW/r7CjO3hNm/AliWItgAo8mKMJD+xmA8nafFEjNJPqPXz93mE7cQKHjkoT/9NIjNXtingCpVUzjk4NBSm0zMEQFIoF9jnUIK0Y510Kw0WO0FwokZFSgAOD0hVD2mmeR2VBRYqTm7kxuuW/BWPDJq5WH6oaj66qCtfiNtZRmGutjG//6E2sFIXH3KCIuG04XtcrTLn0w+33RkkUneqnrSDss2juGfqotL+RAxhuwL8/oaAATQni9Ek20tSBW+dwFxmX9qRUfy23sKlaoe8qDamE4fHifw1zucNFot6xwUBezHuD3Zt9Xr+6SeOoHwUUsFV+oE614AAA/uGelyxLWR+LrV+Qn/69K/1f+u/u66f3M+s+e7CVZ5wsHv5QTNRbWRFH+UcldMsEcfHTZmH8/wwtnGj4aGgm01+ob5QYo3uHCwD5eWj+dlJ1yFDGSpaNk0Jn8cKABZkIOiX5pyUj+ceQo5O3NNYGxsIbSqYtDow4yDSxnrCdSCpomdeLZYY2OqgQbb7TiyktsLGtYtmyElC+dyRTxQLLLJ6Mkrg1V2Nk8jQ3dQemYHcPS50uJSAGXJcfWK/keMkzKeOa49v1e/CxoERMFLjBKdwCMMVDsIpcX+dZy/+o+S9IMU46Dzv2TSh634KAlj/aeTA/p2VSjDrhi8OMpEXc3vu/tu13Aw+q/79UTmI5mR+DkTxUO/+vNzit2LYynZ1rS3KU9UMuQ1zVMRzdkbVRyHtLG9f2RoYytVpdIHopuhxnZOwcBeWag4WYFUbdbRnZNBbmJKYa8r0tXJWn+YFEtZCidnpk8Y33Bvnr8j3BZVFa0gs9DvTyzEXek7unIGRsRQ7nGyDpScLwHwbJibGw6RqWXWJerw25PCSk2zM39vqP9rXLB6xlqYIgqoSc5tFG9CVpSeZthPu/bJTOmKH8OENChfbA8W4a+ktaRBBCM6Bp680cORqQi866NY+2hqVg6znakiNd2aagFwRJKVdeSp4vYnPmlVlMZG6W0RDXx1PUT9ssPan5NJ1kAj0FpV2wYV72BSYD+irfDbWp/dqmqVfAkMRwHIeHKMXEJMcE/6QtCUX1ObOlEaLrqWmwKsstEEzv/gWuBB3agyCGE8JjMylbakaV94EkijYM0IUb2SAcQJ6Y4S5B+T3N9AA=" alt="Joinville, Santa Catarina" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                <img class="location-image"
+                    src="data:image/webp;base64,UklGRmwDAABXRUJQVlA4IGADAAAwIACdASpkAJYAPy2EtlW/r7CjO3gNm/AliWIAyUST2O4uXmA8n6fFFp//6wSn1OTy8qDpV3APsMZansjqbvoomh6PFufoHcahfYdcirsUmvNDKznChyRmNE4SjA9toRnGkKlmBJ9L+KnPZgrI5NlYp6oqR59pDbpp3ZmxwECWHl/ai/HFI7OhD7aWx+ePOads0myEdY9jVjcCSgwaipYa27d6LkJQlDknYHTsREd8J9Ot/B2avc7ycWygnNobpBCvLXwWFHoEicBhNwUzYvaEwW9YVuBltiAs3VAtgvRyhmolwmx/NIJPM03gyS6fu/7G+QRKNJzIqzOvfQE7f38+0V6524UkNc7RGAD+4Z6XLEtZHyODBcPp+HQqXCNHhed+iblHdhWlTTZkJvU8ydzC5EYZvirycQbPI2HXYBYo6GFqUj7tJ7Vu4s85ZZa/HJDLJpV6QcNbayKSdM9/2N1/vSiHHd+9YmodZtQHGyT8yhZ6PuyGkQK7OANNRWy73PJhWc6apoMsVYC/ukiFleYEv1vPiIHJRH9qxGg0PqeOVICcDBCaOjBHlCbCA8SSCzwtQoei+L+Bayu0jQLws7bZdfmSYth2z/FoAYvw202dRz25+zNKa35gaZhXLfdkcNGUJtRVcim33j4e+I1A7fHu5oL7nPfB/K1kx5190T8+CvitRNreokAKo3/VFzIkjosQ/hGJrIKNRpiFsdIB0mi4SdYybqxyjB4IdIRLvhzy2KKHn8Uz4rSIkohhE02H6SwFgvvZFTIGn9nJb56yhE0F3U5bpe5vRuk672x73qj/tR9HJC5Q/NNww5GMrujEEqVy15OGSrp9J0kg+Zwb+HHzYeN8mG0ic5QLiygVUJRCd1Mo33i/rKIkwUdXptaVuIseb8nfh0QlHLrHshK6ojfO50FwkEhklO7MPyCWle4+oWrgxOqSvdWsDEQMN7uNvwwSYH4+GQkEh/H+/dficGRqGQkQMVFTf4e79Eg+acrUHVrzm7fbVHUBFLJZ2ih3TS8JylsY7kYyJNSxVxS+fvXCUKzGpHuxTvc47+LVZuM/UYdlyQyGKMZsFbvIAtHwb+x43dl87vE61zHbC+gnm1d1HA/SYv46j1vGHPE399TWAwTN/GTgda6o+G9TlCQfsAA="
+                    alt="Joinville, Santa Catarina" loading="lazy"
+                    onload="this.style.filter='none';this.style.transform='none';">
             </picture>
             <div class="location-content">
                 <h2>Construindo Sonhos com Qualidade e Confiança</h2>
-                <p>Nossa empresa está localizada em <strong>Joinville, Santa Catarina</strong>, a maior cidade do estado e referência em desenvolvimento urbano.</p>
-                <p>Atendemos toda a região norte com <strong>soluções sob medida em construção de madeira, alvenaria e steel frame</strong>, unindo tradição, inovação e durabilidade em cada projeto.</p>
-                <p>Com uma cidade reconhecida por sua <strong>infraestrutura completa, qualidade de vida e constante valorização imobiliária</strong>, Joinville é o lugar ideal para você investir no seu futuro.</p>
+                <p>Nossa empresa está localizada em <strong>Joinville, Santa Catarina</strong>, a maior cidade do estado
+                    e referência em desenvolvimento urbano.</p>
+                <p>Atendemos toda a região norte com <strong>soluções sob medida em construção de madeira, alvenaria e
+                        steel frame</strong>, unindo tradição, inovação e durabilidade em cada projeto.</p>
+                <p>Com uma cidade reconhecida por sua <strong>infraestrutura completa, qualidade de vida e constante
+                        valorização imobiliária</strong>, Joinville é o lugar ideal para você investir no seu futuro.
+                </p>
                 <p><strong>Transforme seu projeto em realidade com quem entende de construção.</strong></p>
             </div>
         </section>
@@ -178,16 +460,12 @@
         <section class="madeiras-qualidade">
             <div class="madeiras-qualidade-content">
                 <div class="video-box">
-                    <iframe
-                        src="https://player.vimeo.com/video/1117542662"
-                        frameborder="0"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <div id="vimeo-placeholder"></div>
                 </div>
                 <div class="texto-box">
                     <h2>MADEIRAS DE QUALIDADE</h2>
-                    <p>Nossas obras são feitas em madeiras de lei, com esquadrias em vidros temperados, fundações em alvenarias para manter melhor qualidade de nossas obras.</p>
+                    <p>Nossas obras são feitas em madeiras de lei, com esquadrias em vidros temperados, fundações em
+                        alvenarias para manter melhor qualidade de nossas obras.</p>
                 </div>
             </div>
         </section>
@@ -197,16 +475,25 @@
                 <h2 class="titulo-secao">O QUE NOSSOS CLIENTES DIZEM</h2>
                 <div class="depoimentos-grid">
                     <div class="depoimento-card">
-                        <p class="depoimento-texto">"Empresa muito séria no que faz, com certeza super indico, fiz minha casa na praia com eles, quero agradecer ao Carlos desde o primeiro atendimento até o final da obra, cumpriu com tudo que estava no contrato, minha casa ficou linda e mais antes do prazo previsto, quer uma casa bem feita e qualidade procure a PIRÂMIDE CASAS PRÉ-FABRICADAS, eles são de confiança e sabem fazer um trabalho toooooppppppp"</p>
-                        <a href="https://www.google.com/search?q=piramide+casas+pre+fabricadas#lrd=0x94de95511a845339:0x5173155d3889154,1" target="_blank" class="depoimento-autor">Alessandro Souza</a>
+                        <p class="depoimento-texto">"Empresa muito séria no que faz, com certeza super indico, fiz minha
+                            casa na praia com eles, quero agradecer ao Carlos desde o primeiro atendimento até o final
+                            da obra, cumpriu com tudo que estava no contrato, minha casa ficou linda e mais antes do
+                            prazo previsto, quer uma casa bem feita e qualidade procure a PIRÂMIDE CASAS PRÉ-FABRICADAS,
+                            eles são de confiança e sabem fazer um trabalho toooooppppppp"</p>
+                        <a href="https://www.google.com/search?q=piramide+casas+pre+fabricadas#lrd=0x94de95511a845339:0x5173155d3889154,1"
+                            target="_blank" class="depoimento-autor">Alessandro Souza</a>
                     </div>
                     <div class="depoimento-card">
-                        <p class="depoimento-texto">"Pessoal muito atencioso muita atenção e capricho na hora de fazer os projetos, não vejo a hora de poder executar o meu..."</p>
-                        <a href="https://www.google.com/search?q=piramide+casas+pre+fabricadas#lrd=0x94de95511a845339:0x5173155d3889154,1" target="_blank" class="depoimento-autor">Cleverson Silva</a>
+                        <p class="depoimento-texto">"Pessoal muito atencioso muita atenção e capricho na hora de fazer
+                            os projetos, não vejo a hora de poder executar o meu..."</p>
+                        <a href="https://www.google.com/search?q=piramide+casas+pre+fabricadas#lrd=0x94de95511a845339:0x5173155d3889154,1"
+                            target="_blank" class="depoimento-autor">Cleverson Silva</a>
                     </div>
                     <div class="depoimento-card">
-                        <p class="depoimento-texto">"Pode falar com Carlos com certeza ele vai atender você muito bem"</p>
-                        <a href="https://www.google.com/search?q=piramide+casas+pre+fabricadas#lrd=0x94de95511a845339:0x5173155d3889154,1" target="_blank" class="depoimento-autor">Carlos Eduardo L.souza</a>
+                        <p class="depoimento-texto">"Pode falar com Carlos com certeza ele vai atender você muito bem"
+                        </p>
+                        <a href="https://www.google.com/search?q=piramide+casas+pre+fabricadas#lrd=0x94de95511a845339:0x5173155d3889154,1"
+                            target="_blank" class="depoimento-autor">Carlos Eduardo L.souza</a>
                     </div>
                 </div>
             </div>
@@ -218,17 +505,24 @@
         <div class="footer-top">
             <div class="footer-logo">
                 <picture>
+                    <source media="(min-width: 1400px)" srcset="images/logo-xxl.avif" type="image/avif">
                     <source media="(min-width: 1400px)" srcset="images/logo-xxl.webp" type="image/webp">
                     <source media="(min-width: 1400px)" srcset="images/logo-xxl.png">
+                    <source media="(min-width: 1200px)" srcset="images/logo-xl.avif" type="image/avif">
                     <source media="(min-width: 1200px)" srcset="images/logo-xl.webp" type="image/webp">
                     <source media="(min-width: 1200px)" srcset="images/logo-xl.png">
+                    <source media="(min-width: 992px)" srcset="images/logo-lg.avif" type="image/avif">
                     <source media="(min-width: 992px)" srcset="images/logo-lg.webp" type="image/webp">
                     <source media="(min-width: 992px)" srcset="images/logo-lg.png">
+                    <source media="(min-width: 768px)" srcset="images/logo-md.avif" type="image/avif">
                     <source media="(min-width: 768px)" srcset="images/logo-md.webp" type="image/webp">
                     <source media="(min-width: 768px)" srcset="images/logo-md.png">
+                    <source srcset="images/logo-sm.avif" type="image/avif">
                     <source srcset="images/logo-sm.webp" type="image/webp">
                     <source srcset="images/logo-sm.png">
-                    <img src="data:image/webp;base64,UklGRkYCAABXRUJQVlA4IDoCAADwHgCdASqWAIEAP1WgyVexrSmjrpZJUjAqiWMA093c5r5pVrz6mgUjyiulGJ34YiP1K5GkHJ8IBups5e4HQ0DCjg31WxsBKpQpjkSH7MkXe66JQrq9PLmZQQ+bsSZGSiQEeXGLec147s62qYZLjkwUB9Zht+MDKSSilaH9+JOE1Xd9W97+EzxgOLLo3lU1zyfoPYb88YroZK4kKuPgjyMt21wuesNvjFa915ynOJoNbg4mEJkvx2fjihU0Vl3nFoXH1cuKLRthmrPPF5Gk/aYujCHkFT1T4r0OBVgQYqF/hhILDAHv4hQzYCH7pmeEbZpht7t/fo/qBKMU59qzvu/gAP7vhWe1AFTEufgAAlTmCX5Fyareatk5UXqLe8BjGHdxFrs8kfqIGFqZzIHzaUp8Do1yEZ2+8PsBwHeUrAkIbr77cgAscjnJWCK2ZBZcKkkBlOjDqFvJtCqjPUcq2MADlESUGI3QQA5VdmpE45PXwy6bsWUe95hgAufRt4Gh+zJYUuvyKkDPRKrzDXoU/hbJe+hKJ0aSMootu5WsBVu0Gi+CWGnq5Gpw5G8EStgbN37GEajqXVO/K8YGkuR+GtVkH6VqVeFU2uDjJSFUgCjtGUVnL8gFWIqpwRQ/tn46AVXXiH70qkMoRGeyEAD+kO9yPC1ah9CDkHDAN/GotITeND+TiJP2zJ5/PNqIgvvUet1eKiUVZU2g/NSodWCFcMmTH8ErDuOKGwE6sDyDHa6YV7w/kYAEPAAAAAA=" alt="Logo Pirâmide Casas" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                    <img src="data:image/webp;base64,UklGRkYCAABXRUJQVlA4IDoCAADwHgCdASqWAIEAP1WgyVexrSmjrpZJUjAqiWMA093c5r5pVrz6mgUjyiulGJ34YiP1K5GkHJ8IBups5e4HQ0DCjg31WxsBKpQpjkSH7MkXe66JQrq9PLmZQQ+bsSZGSiQEeXGLec147s62qYZLjkwUB9Zht+MDKSSilaH9+JOE1Xd9W97+EzxgOLLo3lU1zyfoPYb88YroZK4kKuPgjyMt21wuesNvjFa915ynOJoNbg4mEJkvx2fjihU0Vl3nFoXH1cuKLRthmrPPF5Gk/aYujCHkFT1T4r0OBVgQYqF/hhILDAHv4hQzYCH7pmeEbZpht7t/fo/qBKMU59qzvu/gAP7vhWe1AFTEufgAAlTmCX5Fyareatk5UXqLe8BjGHdxFrs8kfqIGFqZzIHzaUp8Do1yEZ2+8PsBwHeUrAkIbr77cgAscjnJWCK2ZBZcKkkBlOjDqFvJtCqjPUcq2MADlESUGI3QQA5VdmpE45PXwy6bsWUe95hgAufRt4Gh+zJYUuvyKkDPRKrzDXoU/hbJe+hKJ0aSMootu5WsBVu0Gi+CWGnq5Gpw5G8EStgbN37GEajqXVO/K8YGkuR+GtVkH6VqVeFU2uDjJSFUgCjtGUVnL8gFWIqpwRQ/tn46AVXXiH70qkMoRGeyEAD+kO9yPC1ah9CDkHDAN/GotITeND+TiJP2zJ5/PNqIgvvUet1eKiUVZU2g/NSodWCFcMmTH8ErDuOKGwE6sDyDHa6YV7w/kYAEPAAAAAA="
+                        alt="Logo Pirâmide Casas" loading="lazy"
+                        onload="this.style.filter='none';this.style.transform='none';">
                 </picture>
                 <div class="footer-logo-text">
                     <span class="titulo-principal">Pirâmide Casas</span>
@@ -239,43 +533,64 @@
 
         <div class="footer-gallery">
             <picture>
+                <source media="(min-width: 1400px)" srcset="images/projeto8-xxl.avif" type="image/avif">
                 <source media="(min-width: 1400px)" srcset="images/projeto8-xxl.webp" type="image/webp">
                 <source media="(min-width: 1400px)" srcset="images/projeto8-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/projeto8-xl.avif" type="image/avif">
                 <source media="(min-width: 1200px)" srcset="images/projeto8-xl.webp" type="image/webp">
                 <source media="(min-width: 1200px)" srcset="images/projeto8-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/projeto8-lg.avif" type="image/avif">
                 <source media="(min-width: 992px)" srcset="images/projeto8-lg.webp" type="image/webp">
                 <source media="(min-width: 992px)" srcset="images/projeto8-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/projeto8-md.avif" type="image/avif">
                 <source media="(min-width: 768px)" srcset="images/projeto8-md.webp" type="image/webp">
                 <source media="(min-width: 768px)" srcset="images/projeto8-md.jpg">
+                <source srcset="images/projeto8-sm.avif" type="image/avif">
                 <source srcset="images/projeto8-sm.webp" type="image/webp">
                 <source srcset="images/projeto8-sm.jpg">
-                <img src="data:image/webp;base64,UklGRgoDAABXRUJQVlA4IP4CAACQHgCdASqWAGYAPzmKrlWvP64kuncqA/AnCUWwCwArE0UKa5Mlf9y7dPwbCeQXGsYdCczSZuU8uDD9+QqeUQpMvHR/q5fRZ0OBkrLn2+hLDptEb/jnmw5dmb/LcBuaqUpvewcHWvIY5vEBLQtdxhXi3qfCEcEdG5BbmTEGzgPWAoWsGEOzAR5EToYs0QcLOF+ijBfrfjsvYCZM2L9EaBhim7tWOAa9MDhviQQ/Zpub6kfR8zkxDwMpsD0en+YxNeiKgRQD6Yz5Gw/YW3GE4ogUacdqJGmy9J9NSgyc48kbgElSVCV5SfFhM9tG5V65MsJa6cIw6GbB4xlz2STQAP7vanG+kPQ9CThSI2zs+8bO1acXDlm3bdKEi01BTlIvpWQBZeukBLdq0/aDQ738KlTAYy7ynN4/2yCXLYr482X6kvQqD11a3BrtMWCiz/Jijni6UoFlnGWczojHpgMupjB1SOv660Fjt5y5u1rud0+Vsh9WJwqise9UgbY3GZysme3cUjn9+50fSRM1qOlHp2uaimm9sS+XJVaOuw/LvHCsqlxf8CdSdXQ1NZjdfhW9cwQ71OQ0l8iYfTIPZKWPK56LD81xUV3sctvLfHo52CE4M9jo7izArdEw7BZZzRZp5l4+2pfaWuo3HUj5zE1rO4y2uZEeYsyxno7TSzBZEFgOo0bxjeW5i7EC4vxw7CI4fFP1hUj6rBqCqq9dYam9COPApF4CaIBeQ6PTUU5m4xiCdZI3LL9iXrwxiMHBUPMNUODX1iI1ncuk/wSwKmu9kK47ZrvGe9dNipj0np7UHLc7pdefWtVEkFOWO8ZIhFJf0eTJ2W0rJl69/19PDckWBkVcwjT4VyNxlpgYLZoNZRq1GQMuqQBVfdCN6m3y3BgqgoBto6eCZNU+6O8XVDBEFO9FQv1XpJ5um17ptrtRjPAYa3jQuSUCICkmPiY0toDxGL/7WolazLdXBnyZTs6v2NXIJBqwlcEhTaB2ZqWSl/QnHG5E/rDJncm0NHTUn2gA" alt="Imagem de casa de madeira 1" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                <img src="data:image/webp;base64,UklGRgoDAABXRUJQVlA4IP4CAACQHgCdASqWAGYAPzmKrlWvP64kuncqA/AnCUWwCwArE0UKa5Mlf9y7dPwbCeQXGsYdCczSZuU8uDD9+QqeUQpMvHR/q5fRZ0OBkrLn2+hLDptEb/jnmw5dmb/LcBuaqUpvewcHWvIY5vEBLQtdxhXi3qfCEcEdG5BbmTEGzgPWAoWsGEOzAR5EToYs0QcLOF+ijBfrfjsvYCZM2L9EaBhim7tWOAa9MDhviQQ/Zpub6kfR8zkxDwMpsD0en+YxNeiKgRQD6Yz5Gw/YW3GE4ogUacdqJGmy9J9NSgyc48kbgElSVCV5SfFhM9tG5V65MsJa6cIw6GbB4xlz2STQAP7vanG+kPQ9CThSI2zs+8bO1acXDlm3bdKEi01BTlIvpWQBZeukBLdq0/aDQ738KlTAYy7ynN4/2yCXLYr482X6kvQqD11a3BrtMWCiz/Jijni6UoFlnGWczojHpgMupjB1SOv660Fjt5y5u1rud0+Vsh9WJwqise9UgbY3GZysme3cUjn9+50fSRM1qOlHp2uaimm9sS+XJVaOuw/LvHCsqlxf8CdSdXQ1NZjdfhW9cwQ71OQ0l8iYfTIPZKWPK56LD81xUV3sctvLfHo52CE4M9jo7izArdEw7BZZzRZp5l4+2pfaWuo3HUj5zE1rO4y2uZEeYsyxno7TSzBZEFgOo0bxjeW5i7EC4vxw7CI4fFP1hUj6rBqCqq9dYam9COPApF4CaIBeQ6PTUU5m4xiCdZI3LL9iXrwxiMHBUPMNUODX1iI1ncuk/wSwKmu9kK47ZrvGe9dNipj0np7UHLc7pdefWtVEkFOWO8ZIhFJf0eTJ2W0rJl69/19PDckWBkVcwjT4VyNxlpgYLZoNZRq1GQMuqQBVfdCN6m3y3BgqgoBto6eCZNU+6O8XVDBEFO9FQv1XpJ5um17ptrtRjPAYa3jQuSUCICkmPiY0toDxGL/7WolazLdXBnyZTs6v2NXIJBqwlcEhTaB2ZqWSl/QnHG5E/rDJncm0NHTUn2gA"
+                    alt="Imagem de casa de madeira 1" loading="lazy"
+                    onload="this.style.filter='none';this.style.transform='none';">
             </picture>
             <picture>
+                <source media="(min-width: 1400px)" srcset="images/projeto9-xxl.avif" type="image/avif">
                 <source media="(min-width: 1400px)" srcset="images/projeto9-xxl.webp" type="image/webp">
                 <source media="(min-width: 1400px)" srcset="images/projeto9-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/projeto9-xl.avif" type="image/avif">
                 <source media="(min-width: 1200px)" srcset="images/projeto9-xl.webp" type="image/webp">
                 <source media="(min-width: 1200px)" srcset="images/projeto9-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/projeto9-lg.avif" type="image/avif">
                 <source media="(min-width: 992px)" srcset="images/projeto9-lg.webp" type="image/webp">
                 <source media="(min-width: 992px)" srcset="images/projeto9-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/projeto9-md.avif" type="image/avif">
                 <source media="(min-width: 768px)" srcset="images/projeto9-md.webp" type="image/webp">
                 <source media="(min-width: 768px)" srcset="images/projeto9-md.jpg">
+                <source srcset="images/projeto9-sm.avif" type="image/avif">
                 <source srcset="images/projeto9-sm.webp" type="image/webp">
                 <source srcset="images/projeto9-sm.jpg">
-                <img src="data:image/webp;base64,UklGRn4CAABXRUJQVlA4IHICAADQGACdASqWAFQAP0mOvlWwP7+jNvGNK/ApCWMG+OZuwAR9T4Kd/5gP//C3M7d/DwjfHfMBScbipcFkN8RHN25Oc67isPi72GrVeOv6mFP3FTelJEEl+iI6iwssL8wzSRwxJEbNgdICvwbEnFtFF0ho+KxGSP/WpLNX2+eBgpkoSElZvatDcpQytRqweGS4sAdSev6uKCPt08IKkGeI0Q7Z3JAEyqwxNHidBg2f6a8TFeupM53Qbxrz2kv2Vi9s4IYYxU//u8ziVTYQGPKs3nAA/uXNtyS4D4hfNXMkPx5UWLSvW35pfxjQNE3aLLWBOjwfltiLet1onOWJR5+c55uVajb8P5sA25a88Bk4ZrUuII/W4Ph4RBLtFyIyJUBRT5gVuYj7DUJ1Re0iWiZzfe1pCYt7M536xJcKZw6D7VIUrKjDyQi1KBp6kHwPIjRB2c+Fp8wPZmEgVEtKitYapQzK0Et9ik//YWhs8RE+A5VUQgOMZaQeEkEwZK4xToovMHaFP8JC8/ZOb3MP3R+Uc9WHxiJLey6BdQJWtayY4zo4ExKVTjK/qbFoD9dSnQY/Fhuta+DNvP4m/VVvSAtrRFYY9VoPPnixUx1Yw1OIuBNtpM9LACYlACMbY0Ao8gji3tGwFSLIHIc0I2D5yA1E6dR+SVITl7y2jrcH/0AvMaB5aX5OI6X7cQVjVoZObWm1zmlp5vHp9i3gMIbdGVl0iqbklT50sqTmJVhmu4dz/jce1XWlpCkZ3Z99cGpwMa98b8Z6M5a1rOr77Vhv+Z2nQvFf4LP6l0cq4dgnZYl9iVlWUBAD4tAAErg8fEVmktvfkY6AAA==" alt="Imagem de casa de alvenaria 2" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                <img src="data:image/webp;base64,UklGRn4CAABXRUJQVlA4IHICAADQGACdASqWAFQAP0mOvlWwP7+jNvGNK/ApCWMG+OZuwAR9T4Kd/5gP//C3M7d/DwjfHfMBScbipcFkN8RHN25Oc67isPi72GrVeOv6mFP3FTelJEEl+iI6iwssL8wzSRwxJEbNgdICvwbEnFtFF0ho+KxGSP/WpLNX2+eBgpkoSElZvatDcpQytRqweGS4sAdSev6uKCPt08IKkGeI0Q7Z3JAEyqwxNHidBg2f6a8TFeupM53Qbxrz2kv2Vi9s4IYYxU//u8ziVTYQGPKs3nAA/uXNtyS4D4hfNXMkPx5UWLSvW35pfxjQNE3aLLWBOjwfltiLet1onOWJR5+c55uVajb8P5sA25a88Bk4ZrUuII/W4Ph4RBLtFyIyJUBRT5gVuYj7DUJ1Re0iWiZzfe1pCYt7M536xJcKZw6D7VIUrKjDyQi1KBp6kHwPIjRB2c+Fp8wPZmEgVEtKitYapQzK0Et9ik//YWhs8RE+A5VUQgOMZaQeEkEwZK4xToovMHaFP8JC8/ZOb3MP3R+Uc9WHxiJLey6BdQJWtayY4zo4ExKVTjK/qbFoD9dSnQY/Fhuta+DNvP4m/VVvSAtrRFYY9VoPPnixUx1Yw1OIuBNtpM9LACYlACMbY0Ao8gji3tGwFSLIHIc0I2D5yA1E6dR+SVITl7y2jrcH/0AvMaB5aX5OI6X7cQVjVoZObWm1zmlp5vHp9i3gMIbdGVl0iqbklT50sqTmJVhmu4dz/jce1XWlpCkZ3Z99cGpwMa98b8Z6M5a1rOr77Vhv+Z2nQvFf4LP6l0cq4dgnZYl9iVlWUBAD4tAAErg8fEVmktvfkY6AAA=="
+                    alt="Imagem de casa de alvenaria 2" loading="lazy"
+                    onload="this.style.filter='none';this.style.transform='none';">
             </picture>
             <picture>
+                <source media="(min-width: 1400px)" srcset="images/projeto10-xxl.avif" type="image/avif">
                 <source media="(min-width: 1400px)" srcset="images/projeto10-xxl.webp" type="image/webp">
                 <source media="(min-width: 1400px)" srcset="images/projeto10-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/projeto10-xl.avif" type="image/avif">
                 <source media="(min-width: 1200px)" srcset="images/projeto10-xl.webp" type="image/webp">
                 <source media="(min-width: 1200px)" srcset="images/projeto10-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/projeto10-lg.avif" type="image/avif">
                 <source media="(min-width: 992px)" srcset="images/projeto10-lg.webp" type="image/webp">
                 <source media="(min-width: 992px)" srcset="images/projeto10-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/projeto10-md.avif" type="image/avif">
                 <source media="(min-width: 768px)" srcset="images/projeto10-md.webp" type="image/webp">
                 <source media="(min-width: 768px)" srcset="images/projeto10-md.jpg">
+                <source srcset="images/projeto10-sm.avif" type="image/avif">
                 <source srcset="images/projeto10-sm.webp" type="image/webp">
                 <source srcset="images/projeto10-sm.jpg">
-                <img src="data:image/webp;base64,UklGRloCAABXRUJQVlA4IE4CAADwFwCdASqWAFsAPz2MtVW/MSU7OZWqA+AniWMAzFDzit7gC/0+BVhoeWLWBLsSjnTPUYgT4oR48PT0hRr1Lxtxo4as1jJXMWbsrszLnfzabfSeyAyKkSxxM5NEBqIimqfwF4zik9j0FJ/mIKKsfuw6xXKdtRd7Zchob5499A8379LZ5TnFf/Nj8hWFNoE7Vo+d7qsDGZ92O/7bvlGHeqLjb3EHscUwxNEnNxS0e/l66gPFbEQ0CB85liSiiJL5RgJUlELbHPeEAAD+7TK6oLESecpgdu8aDzY0DTuSElocbYRNRnvVFM8NLX9NthrD/GD8XFrl3uH94zBUdw4YJz/Ro9Lm89xa8zbUrnMNnHii3KXBAIZ6wcsxEg9FXcrjViyVzuz2kgCY9lOiLSVCZ7b8QXPsiDpBfSFHmsJwvrlvh+0hHb4Ceymeh2fawls1G//Uw6PY1IpnZnqihGhq3bYcgJhVEH3Z1NKVsSIhx2XTuC0YYGDwS75sBzVYVvumlM7cEZ3yK1sqZ0RGzTaEXTrz1Lr2dHBl3LmEfIfeRNVHU2DqE9/xYH6IEVWILk2/Cw7RtSclXZf0p3+0bzdFQuVfZQMU/c5YC0xKEtaOSYfozOjbtpJqDoTzFQIRVbWUL56GNfYNugVYf5l0anXbWQbDUpzYgrBlEPVGG9R0rKoW5J9JdMAQJSJxlBXncYyOeHIg0YOO92A15BS0qUbNMXILjg6Fx83ihegpu4H9PSWeV6FZcEvdFwZ/snC/DHcUVVfxfP6MZpwJF8Zd8PaAAA==" alt="Imagem de chalé de madeira 3" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                <img src="data:image/webp;base64,UklGRloCAABXRUJQVlA4IE4CAADwFwCdASqWAFsAPz2MtVW/MSU7OZWqA+AniWMAzFDzit7gC/0+BVhoeWLWBLsSjnTPUYgT4oR48PT0hRr1Lxtxo4as1jJXMWbsrszLnfzabfSeyAyKkSxxM5NEBqIimqfwF4zik9j0FJ/mIKKsfuw6xXKdtRd7Zchob5499A8379LZ5TnFf/Nj8hWFNoE7Vo+d7qsDGZ92O/7bvlGHeqLjb3EHscUwxNEnNxS0e/l66gPFbEQ0CB85liSiiJL5RgJUlELbHPeEAAD+7TK6oLESecpgdu8aDzY0DTuSElocbYRNRnvVFM8NLX9NthrD/GD8XFrl3uH94zBUdw4YJz/Ro9Lm89xa8zbUrnMNnHii3KXBAIZ6wcsxEg9FXcrjViyVzuz2kgCY9lOiLSVCZ7b8QXPsiDpBfSFHmsJwvrlvh+0hHb4Ceymeh2fawls1G//Uw6PY1IpnZnqihGhq3bYcgJhVEH3Z1NKVsSIhx2XTuC0YYGDwS75sBzVYVvumlM7cEZ3yK1sqZ0RGzTaEXTrz1Lr2dHBl3LmEfIfeRNVHU2DqE9/xYH6IEVWILk2/Cw7RtSclXZf0p3+0bzdFQuVfZQMU/c5YC0xKEtaOSYfozOjbtpJqDoTzFQIRVbWUL56GNfYNugVYf5l0anXbWQbDUpzYgrBlEPVGG9R0rKoW5J9JdMAQJSJxlBXncYyOeHIg0YOO92A15BS0qUbNMXILjg6Fx83ihegpu4H9PSWeV6FZcEvdFwZ/snC/DHcUVVfxfP6MZpwJF8Zd8PaAAA=="
+                    alt="Imagem de chalé de madeira 3" loading="lazy"
+                    onload="this.style.filter='none';this.style.transform='none';">
             </picture>
         </div>
 
@@ -285,7 +600,8 @@
                     <h3>Entre em Contato</h3>
                 </div>
                 <div class="contato-coluna-info">
-                    <a href="https://www.google.com/maps/place/PIRÂMIDE+CASAS+PRÉ-FABRICADAS/@-26.3224638,-48.8120598,17z/data=!3m1!4b1!4m6!3m5!1s0x94deb16f36fbfe93:0x12fa9265de4998a4!8m2!3d-26.3224686!4d-48.8094849!16s%2Fg%2F11bwyptg80?entry=ttu" target="_blank">
+                    <a href="https://www.google.com/maps/place/PIRÂMIDE+CASAS+PRÉ-FABRICADAS/@-26.3224638,-48.8120598,17z/data=!3m1!4b1!4m6!3m5!1s0x94deb16f36fbfe93:0x12fa9265de4998a4!8m2!3d-26.3224686!4d-48.8094849!16s%2Fg%2F11bwyptg80?entry=ttu"
+                        target="_blank">
                         Rua Guanabara - 3856 bairro Fátima - Joinville /SC
 
                         CEP: 89229-125
@@ -297,7 +613,8 @@
                     <a href="mailto:casapiramide@gmail.com">Email: casapiramide@gmail.com</a>
                 </div>
                 <div class="contato-coluna-info social">
-                    <a href="https://www.instagram.com/piramidecasas" target="_blank">Social: instagram.com/piramidecasas</a>
+                    <a href="https://www.instagram.com/piramidecasas" target="_blank">Social:
+                        instagram.com/piramidecasas</a>
                 </div>
             </div>
         </div>
@@ -308,6 +625,45 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Fale conosco no WhatsApp">
     </a>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
+
+    <!-- Performance optimization scripts -->
+    <script>
+        // Async CSS loading fallback
+        if (!window.CSS || !CSS.supports('color', 'var(--fake-var)')) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'style.css';
+            document.head.appendChild(link);
+        }
+
+    function loadVimeo(placeholderId, videoId) {
+        const placeholder = document.getElementById(placeholderId);
+        if (placeholder && !placeholder.dataset.loaded) { // Prevent multiple loads
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://player.vimeo.com/video/${videoId}`;
+            iframe.width = '640';
+            iframe.height = '360';
+            iframe.frameborder = '0';
+            iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+            iframe.allowfullscreen = true;
+            placeholder.appendChild(iframe);
+            placeholder.dataset.loaded = 'true'; // Mark as loaded
+        }
+    }
+
+    // Example trigger on scroll - a more robust solution would use IntersectionObserver
+    window.addEventListener('scroll', () => {
+        const placeholder = document.getElementById('vimeo-placeholder');
+        if (placeholder && placeholder.getBoundingClientRect().top < window.innerHeight * 1.5 && !placeholder.dataset.loaded) {
+            loadVimeo('vimeo-placeholder', '1117542662');
+        }
+    });
+    </script>
 </body>
+
 </html>
