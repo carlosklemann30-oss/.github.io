@@ -37,18 +37,29 @@ def generate_variants(img_path: pathlib.Path, output_dir: pathlib.Path) -> None:
     for label, width in BREAKPOINTS.items():
         resized = img.copy()
         resized.thumbnail((width, width * img.height / img.width))
+
+        # Save original format
         output_path = output_dir / f"{stem}-{label}{ext}"
-        resized.save(output_path, quality=85)
+        resized.save(output_path, quality=90, optimize=True)
+
+        # Save WebP format for better compression
+        webp_output_path = output_dir / f"{stem}-{label}.webp"
+        resized.save(webp_output_path, format='WEBP', quality=90, optimize=True)
 
     # Create ultra-light blur placeholder that preserves original content
     blur = img.copy()
     # First resize to a reasonable size that maintains aspect ratio and content
-    blur.thumbnail((100, 100))  # Larger size to preserve content details
+    blur.thumbnail((150, 150))  # Larger size to preserve content details
     # Apply moderate blur to create placeholder effect while keeping content recognizable
     blur = blur.filter(ImageFilter.GaussianBlur(2))
+
+    # Save blur placeholder in original format
     blur_output_path = output_dir / f"{stem}-blur{ext}"
-    # Use very low quality and optimize for smallest file size
     blur.save(blur_output_path, quality=10, optimize=True)
+
+    # Save blur placeholder in WebP format
+    blur_webp_output_path = output_dir / f"{stem}-blur.webp"
+    blur.save(blur_webp_output_path, format='WEBP', quality=15, optimize=True)
 
 
 def collect_images(paths):
