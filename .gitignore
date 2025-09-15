@@ -1,10 +1,2 @@
-# Ignore generated responsive image variants
-images/*-sm.jpg
-images/*-md.jpg
-images/*-lg.jpg
-images/*-xl.jpg
-images/*-xxl.jpg
-images/*-blur.jpg
-
 # Python cache
 __pycache__/

@@ -70,6 +70,13 @@ body {
     overflow: hidden;
 }
 
+/* Picture element styling */
+picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .hero-image img {
     width: 100%;
     height: 100%;
@@ -160,6 +167,11 @@ body {
     gap: 20px;
 }
 
+.about-images picture {
+    display: block;
+    width: 100%;
+}
+
 .about-images img {
     width: 100%;
     border-radius: 8px;
@@ -205,8 +217,20 @@ body {
 
 .modelo-imagem {
     height: 250px;
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+}
+
+.modelo-imagem picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.modelo-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .modelo-info {
@@ -259,9 +283,20 @@ body {
 
 .location-image {
     flex-basis: 50%;
-    background-image: url('images/local-joinville.jpg');
-    background-size: cover;
-    background-position: top;
+    overflow: hidden;
+}
+
+.location-image picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .location-content {
@@ -549,7 +584,7 @@ body {
         font-size: 20px; /* Tamanho ideal para o subtítulo no celular */
     }
 
-    
+
     /* --- AJUSTES DO RODAPÉ PARA MOBILE --- */
     .footer-logo-text .titulo-principal {
         font-size: 2rem;
