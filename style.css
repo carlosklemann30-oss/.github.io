@@ -70,13 +70,6 @@ body {
     overflow: hidden;
 }
 
-/* Picture element styling */
-picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
 .hero-image img {
     width: 100%;
     height: 100%;
@@ -167,11 +160,6 @@ picture {
     gap: 20px;
 }
 
-.about-images picture {
-    display: block;
-    width: 100%;
-}
-
 .about-images img {
     width: 100%;
     border-radius: 8px;
@@ -216,21 +204,9 @@ picture {
 }
 
 .modelo-imagem {
-    height: 250px;
-    overflow: hidden;
-}
-
-.modelo-imagem picture {
-    display: block;
     width: 100%;
-    height: 100%;
-}
-
-.modelo-imagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    background-size: cover;
+    background-position: center;
 }
 
 .modelo-info {
@@ -283,20 +259,9 @@ picture {
 
 .location-image {
     flex-basis: 50%;
-    overflow: hidden;
-}
-
-.location-image picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.location-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
+    background-image: url('images/local-joinville.jpg');
+    background-size: cover;
+    background-position: top;
 }
 
 .location-content {
@@ -309,13 +274,6 @@ picture {
 }
 
 .location-content h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-}
-
-..location-content h2 {
     font-family: 'Quattrocento', serif; /* <-- FONTE ADICIONADA AQUI */
     font-size: 2.5rem;
     font-weight: 700;
@@ -561,6 +519,10 @@ picture {
     .footer-gallery img {
         width: 100%;
         height: auto;
+    }
+
+    .location-image {
+        display: none;
     }
 }
 

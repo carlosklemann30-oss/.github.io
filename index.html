@@ -9,30 +9,18 @@
     <!-- IMPORTAÇÃO DAS FONTES: Open Sans e a nova Quattrocento -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Quattrocento:wght@700&display=swap" rel="stylesheet">
     <style>
-        picture img {filter:blur(20px);transform:scale(1.1);transition:filter .3s ease,transform .3s ease;}
+        picture img{filter:blur(20px);transform:scale(1.1);transition:filter .3s ease,transform .3s ease;}
         .top-header{background-color:#ffffff;padding:30px 0;text-align:center;border-bottom:1px solid #eeeeee;}
         .logo{color:#000000;line-height:1.1;}
         .logo-main{display:block;font-family:'Quattrocento',serif;font-size:72px;font-weight:700;letter-spacing:3px;text-transform:uppercase;}
         .logo-sub{display:block;font-family:'Quattrocento',serif;font-size:40px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:-5px;}
         .hero{position:relative;min-height:90vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px;}
         .hero-image{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden;}
-        .hero-image img{width:100%;height:100%;object-fit:cover;filter:blur(20px);transform:scale(1.1);transition:filter .3s ease,transform .3s ease;}
         .hero-content{display:flex;flex-direction:column;align-items:center;gap:30px;}
         .hero-text-box{background-color:rgba(255,255,255,0.9);padding:30px 50px;border-radius:5px;}
         .hero-content h1{font-family:'Quattrocento',serif;font-size:3.5rem;font-weight:700;color:#2b2b2b;text-transform:uppercase;line-height:1.3;margin-bottom:0;}
         .cta-button{background-color:#25D366;color:#ffffff;padding:18px 50px;text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;text-transform:uppercase;transition:all .3s ease;display:inline-block;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('picture img').forEach(function(img) {
-                img.onload = function() {
-                    this.style.filter = 'none';
-                    this.style.transform = 'none';
-                }
-            })
-        })
-    </script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -51,8 +39,8 @@
                 <source media="(min-width: 1200px)" srcset="images/hero-bg-xl.jpg">
                 <source media="(min-width: 992px)" srcset="images/hero-bg-lg.jpg">
                 <source media="(min-width: 768px)" srcset="images/hero-bg-md.jpg">
-                <source media="(min-width: 576px)" srcset="images/hero-bg-sm.jpg">
-                <img src="images/hero-bg.jpg" alt="Casa pré-fabricada - Pirâmide Casas">
+                <source srcset="images/hero-bg-sm.jpg">
+                <img src="images/hero-bg-blur.jpg" alt="imagem para o título: Pronto para começar um novo capítulo?" onload="this.style.filter='none';this.style.transform='none';">
             </picture>
             <div class="hero-content">
                 <div class="hero-text-box">
@@ -76,16 +64,16 @@
                         <source media="(min-width: 1200px)" srcset="images/projeto1-xl.jpg">
                         <source media="(min-width: 992px)" srcset="images/projeto1-lg.jpg">
                         <source media="(min-width: 768px)" srcset="images/projeto1-md.jpg">
-                        <source media="(min-width: 576px)" srcset="images/projeto1-sm.jpg">
-                        <img src="images/projeto1.jpg" alt="Casa pré-fabricada com varanda" loading="lazy">
+                        <source srcset="images/projeto1-sm.jpg">
+                        <img src="images/projeto1-blur.jpg" alt="Casa pré-fabricada com varanda" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
                     </picture>
                     <picture>
                         <source media="(min-width: 1400px)" srcset="images/projeto2-xxl.jpg">
                         <source media="(min-width: 1200px)" srcset="images/projeto2-xl.jpg">
                         <source media="(min-width: 992px)" srcset="images/projeto2-lg.jpg">
                         <source media="(min-width: 768px)" srcset="images/projeto2-md.jpg">
-                        <source media="(min-width: 576px)" srcset="images/projeto2-sm.jpg">
-                        <img src="images/projeto2.jpg" alt="Casa pré-fabricada de dois andares" loading="lazy">
+                        <source srcset="images/projeto2-sm.jpg">
+                        <img src="images/projeto2-blur.jpg" alt="Casa pré-fabricada de dois andares" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
                     </picture>
                 </div>
             </div>
@@ -98,16 +86,14 @@
           <div class="modelos-grid">
     <!-- Modelo 1 -->
     <div class="modelo-item">
-        <div class="modelo-imagem">
-            <picture>
-                <source media="(min-width: 1400px)" srcset="images/projeto3-xxl.jpg">
-                <source media="(min-width: 1200px)" srcset="images/projeto3-xl.jpg">
-                <source media="(min-width: 992px)" srcset="images/projeto3-lg.jpg">
-                <source media="(min-width: 768px)" srcset="images/projeto3-md.jpg">
-                <source media="(min-width: 576px)" srcset="images/projeto3-sm.jpg">
-                <img src="images/projeto3.jpg" alt="Projeto em madeira - Casa pré-fabricada" loading="lazy">
-            </picture>
-        </div>
+        <picture>
+            <source media="(min-width: 1400px)" srcset="images/projeto3-xxl.jpg">
+            <source media="(min-width: 1200px)" srcset="images/projeto3-xl.jpg">
+            <source media="(min-width: 992px)" srcset="images/projeto3-lg.jpg">
+            <source media="(min-width: 768px)" srcset="images/projeto3-md.jpg">
+            <source srcset="images/projeto3-sm.jpg">
+            <img class="modelo-imagem" src="images/projeto3-blur.jpg" alt="Casa de madeira pré-fabricada" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+        </picture>
         <div class="modelo-info">
             <h3>Projetos Em Madeira</h3>
             <p>2 Quartos | 1 Banheiros | Sala e Cozinha conjugada. Imóvel acessível para investimento em locação</p>
@@ -116,16 +102,14 @@
     </div>
     <!-- Modelo 2 -->
     <div class="modelo-item">
-        <div class="modelo-imagem">
-            <picture>
-                <source media="(min-width: 1400px)" srcset="images/protejo4-xxl.jpg">
-                <source media="(min-width: 1200px)" srcset="images/protejo4-xl.jpg">
-                <source media="(min-width: 992px)" srcset="images/protejo4-lg.jpg">
-                <source media="(min-width: 768px)" srcset="images/protejo4-md.jpg">
-                <source media="(min-width: 576px)" srcset="images/protejo4-sm.jpg">
-                <img src="images/protejo4.jpg" alt="Projeto em alvenaria - Casa pré-fabricada" loading="lazy">
-            </picture>
-        </div>
+        <picture>
+            <source media="(min-width: 1400px)" srcset="images/protejo4-xxl.jpg">
+            <source media="(min-width: 1200px)" srcset="images/protejo4-xl.jpg">
+            <source media="(min-width: 992px)" srcset="images/protejo4-lg.jpg">
+            <source media="(min-width: 768px)" srcset="images/protejo4-md.jpg">
+            <source srcset="images/protejo4-sm.jpg">
+            <img class="modelo-imagem" src="images/protejo4-blur.jpg" alt="Casa de alvenaria pré-fabricada" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+        </picture>
         <div class="modelo-info">
             <h3>Projetos Em Alvenaria</h3>
             <p>3 Quartos | 1 Banheiros |Sala e Cozinha conjugada. Projeto clean para moradia</p>
@@ -134,16 +118,14 @@
     </div>
     <!-- Modelo 3 -->
     <div class="modelo-item">
-        <div class="modelo-imagem">
-            <picture>
-                <source media="(min-width: 1400px)" srcset="images/projeto5-xxl.jpg">
-                <source media="(min-width: 1200px)" srcset="images/projeto5-xl.jpg">
-                <source media="(min-width: 992px)" srcset="images/projeto5-lg.jpg">
-                <source media="(min-width: 768px)" srcset="images/projeto5-md.jpg">
-                <source media="(min-width: 576px)" srcset="images/projeto5-sm.jpg">
-                <img src="images/projeto5.jpg" alt="Projeto chalé - Casa pré-fabricada" loading="lazy">
-            </picture>
-        </div>
+        <picture>
+            <source media="(min-width: 1400px)" srcset="images/projeto5-xxl.jpg">
+            <source media="(min-width: 1200px)" srcset="images/projeto5-xl.jpg">
+            <source media="(min-width: 992px)" srcset="images/projeto5-lg.jpg">
+            <source media="(min-width: 768px)" srcset="images/projeto5-md.jpg">
+            <source srcset="images/projeto5-sm.jpg">
+            <img class="modelo-imagem" src="images/projeto5-blur.jpg" alt="Chalé de madeira pré-fabricado" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+        </picture>
         <div class="modelo-info">
             <h3>Projetos Chalés</h3>
             <p>Chalés em madeira ou Stell Frame para instalação no campo ou litoral</p>
@@ -154,16 +136,12 @@
         </section>
 
         <section class="location">
-            <div class="location-image">
-                <picture>
-                    <source media="(min-width: 1400px)" srcset="images/local-joinville-xxl.jpg">
-                    <source media="(min-width: 1200px)" srcset="images/local-joinville-xl.jpg">
-                    <source media="(min-width: 992px)" srcset="images/local-joinville-lg.jpg">
-                    <source media="(min-width: 768px)" srcset="images/local-joinville-md.jpg">
-                    <source media="(min-width: 576px)" srcset="images/local-joinville-sm.jpg">
-                    <img src="images/local-joinville.jpg" alt="Vista de Joinville, Santa Catarina">
-                </picture>
-            </div>
+            <picture>
+                <source media="(min-width: 1400px)" srcset="images/local-joinville-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/local-joinville-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/local-joinville-lg.jpg">
+                <img class="location-image" src="images/local-joinville-blur.jpg" alt="Joinville, Santa Catarina" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+            </picture>
             <div class="location-content">
                 <h2>Construindo Sonhos com Qualidade e Confiança</h2>
                 <p>Nossa empresa está localizada em <strong>Joinville, Santa Catarina</strong>, a maior cidade do estado e referência em desenvolvimento urbano.</p>
@@ -215,7 +193,14 @@
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-logo">
-                <img src="images/logo.png" alt="Logo Pirâmide Casas">
+                <picture>
+                    <source media="(min-width: 1400px)" srcset="images/logo-xxl.png">
+                    <source media="(min-width: 1200px)" srcset="images/logo-xl.png">
+                    <source media="(min-width: 992px)" srcset="images/logo-lg.png">
+                    <source media="(min-width: 768px)" srcset="images/logo-md.png">
+                    <source srcset="images/logo-sm.png">
+                    <img src="images/logo-blur.png" alt="Logo Pirâmide Casas" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+                </picture>
                 <div class="footer-logo-text">
                     <span class="titulo-principal">Pirâmide Casas</span>
                     <span class="subtitulo">Pré Fabricadas</span>
@@ -224,9 +209,30 @@
         </div>
 
         <div class="footer-gallery">
-            <img src="images/projeto8.jpg" alt="Imagem de casa de madeira 1">
-            <img src="images/projeto9.jpg" alt="Imagem de casa de alvenaria 2">
-            <img src="images/projeto10.jpg" alt="Imagem de chalé de madeira 3">
+            <picture>
+                <source media="(min-width: 1400px)" srcset="images/projeto8-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/projeto8-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/projeto8-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/projeto8-md.jpg">
+                <source srcset="images/projeto8-sm.jpg">
+                <img src="images/projeto8-blur.jpg" alt="Imagem de casa de madeira 1" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+            </picture>
+            <picture>
+                <source media="(min-width: 1400px)" srcset="images/projeto9-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/projeto9-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/projeto9-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/projeto9-md.jpg">
+                <source srcset="images/projeto9-sm.jpg">
+                <img src="images/projeto9-blur.jpg" alt="Imagem de casa de alvenaria 2" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+            </picture>
+            <picture>
+                <source media="(min-width: 1400px)" srcset="images/projeto10-xxl.jpg">
+                <source media="(min-width: 1200px)" srcset="images/projeto10-xl.jpg">
+                <source media="(min-width: 992px)" srcset="images/projeto10-lg.jpg">
+                <source media="(min-width: 768px)" srcset="images/projeto10-md.jpg">
+                <source srcset="images/projeto10-sm.jpg">
+                <img src="images/projeto10-blur.jpg" alt="Imagem de chalé de madeira 3" loading="lazy" onload="this.style.filter='none';this.style.transform='none';">
+            </picture>
         </div>
 
         <div class="footer-bottom">
@@ -258,5 +264,6 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Fale conosco no WhatsApp">
     </a>
 
+    <link rel="stylesheet" href="style.css">
 </body>
 </html>
