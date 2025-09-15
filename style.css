@@ -51,16 +51,29 @@ body {
 
 /* --- SEÇÃO HERO (ESTILO FINAL) --- */
 .hero {
-    /* Usando a imagem de fundo do seu projeto */
-    background-image: url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-content {
@@ -514,7 +527,7 @@ body {
         width: 100%;
         height: auto;
     }
-    
+}
 
 @media (max-width: 768px) {
     /* --- AJUSTES GERAIS PARA MOBILE --- */
@@ -544,7 +557,21 @@ body {
     .footer-logo-text .subtitulo {
         font-size: 1.2rem;
     }
+}
 
-
-
-
+/* --- BREAKPOINTS RESPONSIVOS --- */
+@media (min-width: 576px) {
+    .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+    .container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+}
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
