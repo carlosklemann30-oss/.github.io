@@ -30,30 +30,54 @@ BREAKPOINTS = {
     "xxl": 1400,
 }
 
-# No longer needed since we always use WebP for base64 blur placeholders
+DEFAULT_QUALITY = {
+    "jpeg": 80,
+    "webp": 90,
+    "avif": 50,
+}
+
+CUSTOM_IMAGES_QUALITY = {
+    "local-joinville.jpg": {
+        "jpeg": 80,
+        "webp": 90,
+        "avif": 90,
+    },
+}
+
+FORMATS = {
+    ".jpg": "JPEG",
+    ".jpeg": "JPEG",
+    ".png": "PNG",
+    ".webp": "WEBP",
+    ".avif": "AVIF",
+}
 
 def generate_variants(img_path: pathlib.Path, output_dir: pathlib.Path) -> str:
     img = Image.open(img_path)
     stem, ext = img_path.stem, img_path.suffix
+    filename = img_path.name
 
     # Ensure output directory exists
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Get quality settings for this specific image, or use defaults
+    quality_settings = CUSTOM_IMAGES_QUALITY.get(filename, DEFAULT_QUALITY)
 
     for label, width in BREAKPOINTS.items():
         resized = img.copy()
         resized.thumbnail((width, width * img.height / img.width))
 
-        # Save original format
+        # Save original format (JPEG)
         output_path = output_dir / f"{stem}-{label}{ext}"
-        resized.save(output_path, quality=80, optimize=True)
+        resized.save(output_path, quality=quality_settings["jpeg"], optimize=True)
 
         # Save WebP format for better compression
         webp_output_path = output_dir / f"{stem}-{label}.webp"
-        resized.save(webp_output_path, format='WEBP', quality=90, optimize=True)
+        resized.save(webp_output_path, format='WEBP', quality=quality_settings["webp"], optimize=True)
 
         # Save AVIF format for even better compression
         avif_output_path = output_dir / f"{stem}-{label}.avif"
-        resized.save(avif_output_path, format='AVIF', quality=50, optimize=True)
+        resized.save(avif_output_path, format='AVIF', quality=quality_settings["avif"], optimize=True)
 
     # Create ultra-light blur placeholder that preserves original content
     blur = img.copy()
@@ -62,16 +86,13 @@ def generate_variants(img_path: pathlib.Path, output_dir: pathlib.Path) -> str:
     # Apply moderate blur to create placeholder effect while keeping content recognizable
     blur = blur.filter(ImageFilter.GaussianBlur(2))
 
-    # Note: Blur placeholder files are no longer saved as separate files
-    # since they are embedded as base64 data URLs in the HTML
-
     # Generate base64 data URL for the blur placeholder
     # Always use WebP format for better compression in base64
     buffer = io.BytesIO()
-    blur.save(buffer, format='WEBP', quality=15, optimize=True)
+    blur.save(buffer, format=FORMATS[ext], quality=10, optimize=True)
     buffer.seek(0)
     base64_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
-    base64_url = f"data:image/webp;base64,{base64_data}"
+    base64_url = f"data:image/{FORMATS[ext].lower()};base64,{base64_data}"
 
     return base64_url
 
@@ -148,9 +169,9 @@ def main():
     base64_mapping = {}
 
     for img_path in collect_images(args.paths):
+        print(f"Processing {img_path} -> {output_dir}")
         base64_url = generate_variants(img_path, output_dir)
         base64_mapping[img_path.stem] = base64_url
-        print(f"Processed {img_path} -> {output_dir}")
 
     # Update HTML file with base64 data URLs
     if base64_mapping:
