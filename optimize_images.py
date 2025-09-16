@@ -64,6 +64,7 @@ def generate_variants(img_path: pathlib.Path, output_dir: pathlib.Path) -> str:
     quality_settings = CUSTOM_IMAGES_QUALITY.get(filename, DEFAULT_QUALITY)
 
     for label, width in BREAKPOINTS.items():
+        # Generate standard resolution (1x)
         resized = img.copy()
         resized.thumbnail((width, width * img.height / img.width))
 
@@ -78,6 +79,23 @@ def generate_variants(img_path: pathlib.Path, output_dir: pathlib.Path) -> str:
         # Save AVIF format for even better compression
         avif_output_path = output_dir / f"{stem}-{label}.avif"
         resized.save(avif_output_path, format='AVIF', quality=quality_settings["avif"], optimize=True)
+
+        # Generate retina resolution (2x) for high-DPI displays
+        retina_width = width * 2
+        retina_resized = img.copy()
+        retina_resized.thumbnail((retina_width, retina_width * img.height / img.width))
+
+        # Save retina original format (JPEG)
+        retina_output_path = output_dir / f"{stem}-{label}@2x{ext}"
+        retina_resized.save(retina_output_path, quality=quality_settings["jpeg"], optimize=True)
+
+        # Save retina WebP format
+        retina_webp_output_path = output_dir / f"{stem}-{label}@2x.webp"
+        retina_resized.save(retina_webp_output_path, format='WEBP', quality=quality_settings["webp"], optimize=True)
+
+        # Save retina AVIF format
+        retina_avif_output_path = output_dir / f"{stem}-{label}@2x.avif"
+        retina_resized.save(retina_avif_output_path, format='AVIF', quality=quality_settings["avif"], optimize=True)
 
     # Create ultra-light blur placeholder that preserves original content
     blur = img.copy()
