@@ -98,9 +98,11 @@
 
 .modelo-imagem {
     width: 100%;
-    background-size: cover;
-    background-position: center;
+    height: 190px;
+    object-fit: cover;
+    display: block;
 }
+
 
 .modelo-info {
     padding: 25px;
